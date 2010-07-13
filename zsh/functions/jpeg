@@ -1,0 +1,1 @@
+find . -name '*.jpeg' -exec bash -c 'mv "$1" "${1/%.jpeg/.jpg}"' -- {} \;

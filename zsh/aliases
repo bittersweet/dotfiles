@@ -1,0 +1,19 @@
+# git
+alias gd='git diff'
+alias gb='git branch'
+alias gs='git status'
+
+# rails
+alias sc='script/console'
+alias ss='script/server'
+
+#ssh
+alias bz='ssh -p 30000 mark@ikbenbitterzoet.com'
+alias bzd='ssh -p 30000 deploy@ikbenbitterzoet.com'
+
+# Setting these commands here because they were being
+# overwritten somehow
+
+alias ack='ack'
+alias test='ruby -Itest'
+alias cheat='cheat'

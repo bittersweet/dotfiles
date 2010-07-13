@@ -1,0 +1,4 @@
+local b="$(git rev-parse --abbrev-ref HEAD)"
+git pull --rebase origin master
+git checkout master
+git merge $b

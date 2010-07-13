@@ -1,0 +1,8 @@
+log/*.log
+.DS_Store
+tmp
+db/*.sqlite3
+doc/api
+doc/app
+*.mp3
+*.swp

@@ -1,0 +1,21 @@
+[user]
+	name = Mark Mulder
+	email = markmulder@gmail.com
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+	interactive = auto
+[core]
+	excludesfile = /Users/markmulder/.gitignore
+	pager = less
+	editor = vim
+[github]
+	user = bittersweet
+[diff]
+	tool = gvimdiff
+[difftool]
+  prompt = false
+[merge]
+  tool = gvimdiff
+
