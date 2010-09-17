@@ -4,7 +4,6 @@ let mapleader = ","
 " Call pathogen
 call pathogen#runtime_append_all_bundles()
 
-
 set nocompatible      " no vi like behavior
 set cf                                " Enable error files & error jumping.
 set history=256                       " Number of things to remember in history.
@@ -24,22 +23,22 @@ set showmatch                         " Show matching brackets.
 set mat=5                             " Bracket blinking.
 set wildignore+=*.o,.git              " Patterns to ignore during file-navigation
 set laststatus=2                      " Always show status line.
-set lazyredraw                        " don't redraw when it's not needed
+set lazyredraw                        " Don't redraw when it's not needed
 
-set shiftwidth=2                      " spaces per tab (when shifting)
-set tabstop=2                         " spaces per tab
-set expandtab                         " always use spaces instead of tabs
+set shiftwidth=2                      " Spaces per tab (when shifting)
+set tabstop=2                         " Spaces per tab
+set expandtab                         " Always use spaces instead of tabs
 set smarttab                          " <tab>
 set autoindent
 set bs=2                              " Backspace over everything in insert mode
 
-set guifont=Menlo\ Regular:h16.00
-syntax on                             " syntax highlighting
+set guifont=Menlo\ Regular:h14.00
+syntax on                             " Syntax highlighting
 
+" Disable visual and audio bells
 set noerrorbells
 set visualbell
 set t_vb=
-set shiftwidth=2  " Tabs under smart indent
 set nocp incsearch
 set cinoptions=:0,p0,t0
 set cinwords=if,else,while,do,for,switch,case
@@ -56,19 +55,18 @@ filetype indent on
 filetype plugin on
 compiler ruby
 
+" Ack
 let g:ackprg="ack -H --nocolor --nogroup --column"
 map <leader>a :Ack<space>
 
 " NERDTree
 :noremap ,n :NERDTreeToggle<CR>
 
-let VCSCommandGitExec='/usr/local/bin/git'
-
-" scroll tabs
+" scroll tabs with the Apple key
 map <D-]> :tabnext<CR>
 map <D-[> :tabprev<CR>
 
-" Whitespace
+" Automatically remove trailing whitespace on save
 autocmd BufWritePre *.{rb,php,erb,js,css,html,htm} :%s/\s\+$//e
 
 " Colors 
@@ -86,6 +84,7 @@ if has("gui_macvim")
   set guioptions-=r                       " Don't show right scrollbar
   set guioptions-=R
   set fuoptions=maxvert,maxhorz
+  set cursorline                          " show the current line
   map <leader>f :set invfullscreen<CR>    " Switch to fullscreen
 endif
 
@@ -121,17 +120,3 @@ inoremap <Left>  <NOP>
 inoremap <Right> <NOP>
 inoremap <Up>    <NOP>
 inoremap <Down>  <NOP>
-
-" Ruby testing stuff
-map <Leader>y <Plug>RubyTestRun
-map <Leader>Y <Plug>RubyFileRun
-let g:rubytest_in_quickfix = 1
-let g:rubytest_cmd_test = "ruby -wW1 %p" 
-let g:rubytest_cmd_testcase = "ruby -wW1 %p -n %c" 
-
-augroup RUBY
-  autocmd!
-  autocmd BufNewFile,BufRead */test/**/*.rb,*_test.rb compiler ruby
-augroup END
-
-map <Leader>r <Plug>MakeGreen 
