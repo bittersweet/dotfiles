@@ -120,3 +120,6 @@ inoremap <Left>  <NOP>
 inoremap <Right> <NOP>
 inoremap <Up>    <NOP>
 inoremap <Down>  <NOP>
+
+" Lusty Juggler
+nmap <silent> <Leader>b :LustyJuggler<CR>
