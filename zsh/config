@@ -46,6 +46,9 @@ bindkey '^[[3~' delete-char
 bindkey '^[^N' newtab
 bindkey '^?' backward-delete-char
 
+# enable shift tab
+bindkey '^[[Z' reverse-menu-complete
+
     autoload colors zsh/terminfo
     if [[ "$terminfo[colors]" -ge 8 ]]; then
    colors
