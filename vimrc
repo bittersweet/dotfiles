@@ -73,7 +73,7 @@ autocmd BufWritePre *.{rb,php,erb,js,css,html,htm,markdown,feature} :%s/\s\+$//e
 set background=dark 
 color mustang
 if has("gui_macvim")
-  colorscheme mustang
+  colorscheme mayansmoke
   set linespace=2
   set showtabline=1
   set guioptions-=m
