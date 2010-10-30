@@ -12,6 +12,7 @@
 	editor = vim
 [github]
 	user = bittersweet
+  token = 60e01428916a160be0e0456c99bc1cc8
 [diff]
 	tool = gvimdiff
 [difftool]

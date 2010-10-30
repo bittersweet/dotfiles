@@ -90,10 +90,10 @@ function! s:AllowQuote(char, isBS)
 
         if l:backSlashCount % 2
             let l:result = 0
-        else
-            if a:char == "'" && l:prev =~ '[a-zA-Z0-9]'
-                let l:result = 0
-            endif
+        " else
+        "     if a:char == "'" && l:prev =~ '[a-zA-Z0-9]'
+        "         let l:result = 0
+        "     endif
         endif
     endif
     return l:result
