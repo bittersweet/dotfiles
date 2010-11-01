@@ -17,3 +17,7 @@ alias bzd='ssh -p 30000 deploy@ikbenbitterzoet.com'
 alias ack='ack'
 alias test='ruby -Itest'
 alias cheat='cheat'
+
+alias amend='git commit --amend'
+
+alias bi='bundle install'
