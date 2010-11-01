@@ -67,7 +67,7 @@ map <D-]> :tabnext<CR>
 map <D-[> :tabprev<CR>
 
 " Automatically remove trailing whitespace on save
-autocmd BufWritePre *.{rb,php,erb,js,css,html,htm,markdown,feature} :%s/\s\+$//e
+autocmd BufWritePre *.{rb,php,erb,js,css,html,htm,markdown,feature,haml} :%s/\s\+$//e
 
 " Colors 
 set background=dark 
