@@ -124,3 +124,6 @@ inoremap <Down>  <NOP>
 " Lusty Juggler
 nmap <silent> <Leader>b :LustyJuggler<CR>
 let g:LustyJugglerSuppressRubyWarning = 1
+map <Leader>v :vsplit<CR>
+
+:set splitright "open split on the right
