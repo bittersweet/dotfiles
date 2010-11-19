@@ -1,1 +1,6 @@
 --type-set=haml=.haml
+--type-set=cucumber=.feature
+--type-set=sass=.sass
+--type-set=rake=.rake
+--ignore-dir=coverage
+--ignore-dir=tmp
