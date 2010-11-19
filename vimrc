@@ -21,7 +21,7 @@ set ttimeoutlen=50                    " Speed up O etc in the Terminal
 set virtualedit=block                 " Allow cursor to move where there is no text in visual block mode
 set showmatch                         " Show matching brackets.
 set mat=5                             " Bracket blinking.
-set wildignore+=*.o,.git              " Patterns to ignore during file-navigation
+set wildignore+=*.o,.git,*tmp         " Patterns to ignore during file-navigation
 set laststatus=2                      " Always show status line.
 set lazyredraw                        " Don't redraw when it's not needed
 
