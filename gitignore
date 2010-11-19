@@ -6,3 +6,4 @@ doc/api
 doc/app
 *.mp3
 *.swp
+.rvmrc
