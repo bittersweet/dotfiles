@@ -15,7 +15,7 @@ set timeoutlen=250                    " Time to wait after ESC (default causes a
 set ignorecase                        " Ignore case when searching
 set smartcase                         " Except when searchstring includes a capital letter
 set autoread                          " Automatically pick up changes in files, like after git checkout
-set scrolloff=3                       " Start scrolling 3 lines before edge of viewport
+set scrolloff=9                       " Start scrolling 3 lines before edge of viewport
 set sidescrolloff=3                   " Same, but for columns
 set ttimeoutlen=50                    " Speed up O etc in the Terminal
 set virtualedit=block                 " Allow cursor to move where there is no text in visual block mode
