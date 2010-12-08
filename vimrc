@@ -127,3 +127,12 @@ let g:LustyJugglerSuppressRubyWarning = 1
 map <Leader>v :vsplit<CR>
 
 :set splitright "open split on the right
+
+" function to delete complete method
+function! DeleteMethod()
+  exe "norm \<esc>V"
+  exe "norm %"
+  exe "norm D"
+endfunction
+
+map <Leader>d :call DeleteMethod()<CR>
