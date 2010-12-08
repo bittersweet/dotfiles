@@ -136,3 +136,7 @@ function! DeleteMethod()
 endfunction
 
 map <Leader>d :call DeleteMethod()<CR>
+
+" Rename :W to :w
+cmap W w
+
