@@ -32,7 +32,7 @@ set smarttab                          " <tab>
 set autoindent
 set bs=2                              " Backspace over everything in insert mode
 
-set guifont=Menlo\ Regular:h14.00
+set guifont=Inconsolata:h16.00
 syntax on                             " Syntax highlighting
 
 " Disable visual and audio bells
