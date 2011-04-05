@@ -70,10 +70,11 @@ map <D-[> :tabprev<CR>
 autocmd BufWritePre *.{rb,php,erb,js,css,sass,html,htm,markdown,feature,haml} :%s/\s\+$//e
 
 " Colors 
-set background=dark 
-color mustang
+set background=light
+colorscheme solarized
+let g:solarized_contrast="high"
+set cursorline                          " show the current line
 if has("gui_macvim")
-  colorscheme liquidcarbon
   set linespace=2
   set showtabline=1
   set guioptions-=m
@@ -84,7 +85,6 @@ if has("gui_macvim")
   set guioptions-=r                       " Don't show right scrollbar
   set guioptions-=R
   set fuoptions=maxvert,maxhorz
-  set cursorline                          " show the current line
   map <leader>f :set invfullscreen<CR>    " Switch to fullscreen
 endif
 
