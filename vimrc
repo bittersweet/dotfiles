@@ -99,10 +99,6 @@ let g:CommandTMatchWindowAtTop = 1
 let g:CommandTMaxHeight = 15
 map <leader>p :CommandTFlush<CR>
 
-" highlight over 80 cols
-highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-match OverLength /\%81v.\+/
-
 " Shows what you are typing as a command
 set showcmd
 
