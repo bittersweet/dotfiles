@@ -2,5 +2,6 @@
 --type-set=cucumber=.feature
 --type-set=sass=.sass
 --type-set=rake=.rake
+--type-set=yaml=.yml
 --ignore-dir=coverage
 --ignore-dir=tmp
