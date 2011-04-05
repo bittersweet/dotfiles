@@ -2,6 +2,8 @@
 alias gd='git diff'
 alias gb='git branch'
 alias gs='git status'
+alias ga='git commit -a --amend -C HEAD'
+alias gc='git checkout'
 
 # rails
 alias sc='script/console'
@@ -21,3 +23,5 @@ alias cheat='cheat'
 alias amend='git commit --amend'
 
 alias bi='bundle install'
+
+alias migrate='rake db:migrate && rake db:migrate RAILS_ENV=test'
