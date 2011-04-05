@@ -111,15 +111,24 @@ imap <C-O> <end><cr>
 " Dont want to edit these files
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi
 
-" Disable arrow keys
-inoremap <Left>  <NOP>
-inoremap <Right> <NOP>
-inoremap <Up>    <NOP>
-inoremap <Down>  <NOP>
+" Unbind the cursor keys in insert, normal and visual modes.
+" still doesn't work in insert mode...
+noremap  <Up> ""
+noremap! <Up> <Esc>
+noremap  <Down> ""
+noremap! <Down> <Esc>
+noremap  <Left> ""
+noremap! <Left> <Esc>
+noremap  <Right> ""
+noremap! <Right> <Esc>
 
 " Lusty Juggler
 nmap <silent> <Leader>b :LustyJuggler<CR>
 let g:LustyJugglerSuppressRubyWarning = 1
+
+" fugitive
+nmap <silent> <Leader>s :Gstatus<CR>
+
 map <Leader>v :vsplit<CR>
 
 :set splitright "open split on the right
@@ -128,6 +137,7 @@ map <Leader>v :vsplit<CR>
 function! DeleteMethod()
   exe "norm \<esc>V"
   exe "norm %"
+  exe "norm j"
   exe "norm D"
 endfunction
 
@@ -136,3 +146,9 @@ map <Leader>d :call DeleteMethod()<CR>
 " Rename :W to :w
 cmap W w
 
+let g:JSLintHighlightErrorLine = 1
+
+set t_Co=256
+
+" Indent and remember position
+map   <silent> <F5> mmgg=G`m^
