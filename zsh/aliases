@@ -8,6 +8,7 @@ alias gc='git checkout'
 # rails
 alias sc='script/console'
 alias ss='script/server'
+alias migrate='rake db:migrate && rake db:migrate RAILS_ENV=test'
 
 #ssh
 alias bz='ssh -p 30000 mark@ikbenbitterzoet.com'
