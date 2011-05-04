@@ -121,7 +121,8 @@ function! s:Init()
   endif
   " <% %>
   if &ft == "eruby"
-    inoremap  <buffer> <C-X>- <%<Space><Space>-%><Esc>3hi
+    inoremap  <buffer> <C-X>- <%<Space><Space>%><Esc>2hi
+    " inoremap  <buffer> <C-X>- <%<Space><Space>%><Esc>3hi
     " rails3 inoremap  <buffer> <C-X>- <%<Space><Space>%><Esc>3hi
     inoremap  <buffer> <C-X>= <%=<Space><Space>%><Esc>2hi
   elseif &ft == "cf"
