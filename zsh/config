@@ -5,6 +5,13 @@ else
   export PS1='$PR_RED%2c$PR_NO_COLOR $(git_info_for_prompt)%# '
 fi
 
+local return_code="%(?..%{$fg[red]%}%? ↵%{$reset_color%})"
+
+PROMPT='%{$fg[green]%}%c %{$fg[blue]$(git_info_for_prompt)%}\
+%{$fg[red]%}%(!.#.»)%{$reset_color%} '
+PROMPT2='%{$fg[red]%}\ $(git_info_for_prompt)\ %{$reset_color%}'
+#RPS1='%{$fg[blue]%}%~%{$reset_color%} ${return_code} '
+
 export EDITOR='mate -w'
 export PATH="~/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/git/bin:/usr/local/bin/git:$PATH"
 export PATH=$PATH:/Users/markmulder/sources
@@ -59,10 +66,3 @@ bindkey '^[[Z' reverse-menu-complete
 #PS1="[$PR_RED%2c$PR_NO_COLOR]%(!.#.$) "
 
 export RUBYLIB="lib:test:$RUBYLIB"
-
-local return_code="%(?..%{$fg[red]%}%? ↵%{$reset_color%})"
-
-PROMPT='%{$fg[green]%}%c \
-%{$fg[red]%}%(!.#.»)%{$reset_color%} '
-PROMPT2='%{$fg[red]%}\ %{$reset_color%}'
-# RPS1='%{$fg[blue]%}%~%{$reset_color%} ${return_code} '
