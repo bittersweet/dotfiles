@@ -70,9 +70,7 @@ map <D-[> :tabprev<CR>
 autocmd BufWritePre *.{rb,php,erb,js,css,sass,html,htm,markdown,feature,haml} :%s/\s\+$//e
 
 " Colors 
-set background=light
-colorscheme solarized
-let g:solarized_contrast="high"
+colorscheme sand
 set cursorline                          " show the current line
 if has("gui_macvim")
   set linespace=2
