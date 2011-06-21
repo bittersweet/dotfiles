@@ -62,9 +62,9 @@ map <leader>a :Ack<space>
 " NERDTree
 :noremap ,n :NERDTreeToggle<CR>
 
-" scroll tabs with the Apple key
-map <D-]> :tabnext<CR>
-map <D-[> :tabprev<CR>
+" page through quickfix results
+map <D-J> :cnext<CR>
+map <D-K> :cprev<CR>
 
 " Automatically remove trailing whitespace on save
 autocmd BufWritePre *.{rb,php,erb,js,css,sass,html,htm,markdown,feature,haml} :%s/\s\+$//e
