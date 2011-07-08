@@ -128,6 +128,7 @@ let g:LustyJugglerSuppressRubyWarning = 1
 nmap <silent> <Leader>s :Gstatus<CR>
 
 map <Leader>v :vsplit<CR>
+map <Leader>s :split<CR>
 
 :set splitright "open split on the right
 
