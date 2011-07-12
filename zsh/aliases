@@ -4,6 +4,7 @@ alias gb='git branch'
 alias gs='git status'
 alias ga='git commit -a --amend -C HEAD'
 alias gc='git checkout'
+alias gm='git merge'
 
 # rails
 alias sc='script/console'
