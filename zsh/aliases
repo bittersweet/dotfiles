@@ -9,7 +9,7 @@ alias gm='git merge'
 # rails
 alias sc='script/console'
 alias ss='script/server'
-alias migrate='rake db:migrate && rake db:migrate RAILS_ENV=test'
+alias migrate='bundle exec rake db:migrate && bundle exec rake db:migrate RAILS_ENV=test'
 alias redo='rake db:migrate:redo && rake db:migrate:redo RAILS_ENV=test'
 
 #ssh
@@ -27,4 +27,3 @@ alias amend='git commit --amend'
 
 alias bi='bundle install'
 
-alias migrate='rake db:migrate && rake db:migrate RAILS_ENV=test'
