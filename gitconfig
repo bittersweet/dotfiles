@@ -9,7 +9,7 @@
 [core]
 	excludesfile = /Users/markmulder/.gitignore
 	pager = less
-	editor = vim
+	editor = /usr/bin/vim
 [github]
 	user = bittersweet
   token = 60e01428916a160be0e0456c99bc1cc8
