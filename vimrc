@@ -67,10 +67,10 @@ map <D-J> :cnext<CR>
 map <D-K> :cprev<CR>
 
 " Automatically remove trailing whitespace on save
-autocmd BufWritePre *.{rb,php,erb,js,css,sass,html,htm,markdown,feature,haml} :%s/\s\+$//e
+autocmd BufWritePre *.{rb,php,erb,js,css,sass,html,htm,markdown,feature,haml,txt} :%s/\s\+$//e
 
 " Colors 
-colorscheme sand
+colorscheme Tomorrow
 set cursorline                          " show the current line
 if has("gui_macvim")
   set linespace=2
@@ -151,3 +151,4 @@ set t_Co=256
 
 " Indent and remember position
 map   <silent> <F5> mmgg=G`m^
+
