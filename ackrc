@@ -3,5 +3,6 @@
 --type-set=sass=.sass
 --type-set=rake=.rake
 --type-set=yaml=.yml
+--type-set=jst=.jst
 --ignore-dir=coverage
 --ignore-dir=tmp
