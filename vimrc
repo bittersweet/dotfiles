@@ -152,3 +152,18 @@ set t_Co=256
 " Indent and remember position
 map   <silent> <F5> mmgg=G`m^
 
+" Toggle the quickfix window
+function! QfToggle()
+    for i in range(1, winnr('$'))
+        let bnum = winbufnr(i)
+        if getbufvar(bnum, '&buftype') == 'quickfix'
+            cclose
+            return
+        endif
+    endfor
+
+    copen
+endfunction
+
+map <Leader>q :call QfToggle()<CR>
+
