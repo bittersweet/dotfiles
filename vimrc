@@ -67,9 +67,9 @@ map <D-J> :cnext<CR>
 map <D-K> :cprev<CR>
 
 " Automatically remove trailing whitespace on save
-autocmd BufWritePre *.{rb,php,erb,js,css,sass,html,htm,markdown,feature,haml,txt} :%s/\s\+$//e
+autocmd BufWritePre * :%s/\s\+$//e
 
-" Colors 
+" Colors
 colorscheme Tomorrow
 set cursorline                          " show the current line
 if has("gui_macvim")
@@ -90,7 +90,7 @@ endif
 map <Leader>c :TComment<CR>
 
 " Ragtag
-let g:ragtag_global_maps = 1 
+let g:ragtag_global_maps = 1
 
 " Command + t
 let g:CommandTMatchWindowAtTop = 1
