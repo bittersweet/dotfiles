@@ -167,3 +167,4 @@ endfunction
 
 map <Leader>q :call QfToggle()<CR>
 
+set wildmenu
