@@ -19,4 +19,6 @@
   prompt = false
 [merge]
   tool = gvimdiff
-
+[push]
+  # Push current branch even if you've never pushed it before
+  default = current
