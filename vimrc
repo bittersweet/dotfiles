@@ -168,3 +168,6 @@ endfunction
 map <Leader>q :call QfToggle()<CR>
 
 set wildmenu
+
+" Autoresize windows when resizing MacVim
+autocmd VimResized * wincmd =
