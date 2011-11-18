@@ -171,3 +171,6 @@ set wildmenu
 
 " Autoresize windows when resizing MacVim
 autocmd VimResized * wincmd =
+
+" Disable manual key
+nnoremap K <nop>
