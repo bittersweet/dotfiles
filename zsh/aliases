@@ -20,6 +20,7 @@ alias bzd='ssh -p 30000 deploy@ikbenbitterzoet.com'
 
 # Ruby
 alias bi='bundle install'
+alias be='bundle exec'
 
 # Setting these commands here because they were being
 # overwritten somehow
