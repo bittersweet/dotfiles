@@ -1,30 +1,28 @@
-# git
+# Git
 alias gd='git diff'
 alias gb='git branch'
 alias gs='git status'
 alias ga='git commit -a --amend -C HEAD'
 alias gc='git checkout'
 alias gm='git merge'
+alias amend='git commit --amend'
 
-# rails
+# Rails
 alias sc='script/console'
 alias ss='script/server'
 alias migrate='bundle exec rake db:migrate && bundle exec rake db:migrate RAILS_ENV=test'
 alias redo='bundle exec rake db:migrate:redo && bundle exec rake db:migrate:redo RAILS_ENV=test'
 alias routes='bundle exec rake routes'
 
-#ssh
+# SSH
 alias bz='ssh -p 30000 mark@ikbenbitterzoet.com'
 alias bzd='ssh -p 30000 deploy@ikbenbitterzoet.com'
+
+# Ruby
+alias bi='bundle install'
 
 # Setting these commands here because they were being
 # overwritten somehow
 
 alias ack='ack'
-alias test='ruby -Itest'
 alias cheat='cheat'
-
-alias amend='git commit --amend'
-
-alias bi='bundle install'
-
