@@ -40,9 +40,9 @@ bindkey '^[[Z' reverse-menu-complete
 
 # Prompt setup
 
-#PROMPT='%{$fg[green]%}%c %{$fg[blue]$(git_info_for_prompt)%}\
-PROMPT='%{$fg[green]%}%c %{$fg[blue]%}\
-%{$fg[red]%}%(!.#.»)%{$reset_color%} '
+PROMPT='%{$fg[green]%}%c %{$fg[blue]$(git_info_for_prompt)%}\
+%{$fg[red]%}%(!.#.$)%{$reset_color%} '
+#PROMPT='%{$fg[green]%}%c %{$fg[blue]%}\
 
 autoload colors zsh/terminfo
 if [[ "$terminfo[colors]" -ge 8 ]]; then
