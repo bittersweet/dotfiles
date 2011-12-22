@@ -70,7 +70,7 @@ map <D-K> :cprev<CR>
 autocmd BufWritePre * :%s/\s\+$//e
 
 " Colors
-colorscheme Tomorrow
+colorscheme Zenburn
 set cursorline                          " show the current line
 if has("gui_macvim")
   set linespace=2
