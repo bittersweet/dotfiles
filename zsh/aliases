@@ -22,6 +22,9 @@ alias bzd='ssh -p 30000 deploy@ikbenbitterzoet.com'
 alias bi='bundle install'
 alias be='bundle exec'
 
+# Misc
+alias ship='git push && cap deploy'
+
 # Setting these commands here because they were being
 # overwritten somehow
 
