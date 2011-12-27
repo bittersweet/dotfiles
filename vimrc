@@ -174,6 +174,7 @@ autocmd VimResized * wincmd =
 
 " Disable manual key
 nnoremap K <nop>
+vnoremap K <nop>
 
 command W w
 command Wq wq
