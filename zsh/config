@@ -55,3 +55,8 @@ for color in RED GREEN YELLOW BLUE MAGENTA CYAN WHITE; do
 done
 
 export RUBYLIB="lib:test:$RUBYLIB"
+
+# Rbenv
+
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
