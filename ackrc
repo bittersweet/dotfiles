@@ -1,8 +1,8 @@
 --type-set=haml=.haml
 --type-set=cucumber=.feature
 --type-set=sass=.sass
---type-set=rake=.rake
 --type-set=yaml=.yml
 --type-set=jst=.jst
+--type-set=coffee=.coffee
 --ignore-dir=coverage
 --ignore-dir=tmp
