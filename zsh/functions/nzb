@@ -1,0 +1,1 @@
+find . -name '*.nzb' -exec bash -c 'nzbget -A "$1" && rm "$1"' -- {} \;
