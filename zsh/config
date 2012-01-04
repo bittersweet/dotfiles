@@ -38,12 +38,6 @@ bindkey '^?' backward-delete-char
 # enable shift tab
 bindkey '^[[Z' reverse-menu-complete
 
-# Prompt setup
-
-PROMPT='%{$fg[green]%}%c %{$fg[blue]$(git_info_for_prompt)%}\
-%{$fg[red]%}%(!.#.$)%{$reset_color%} '
-#PROMPT='%{$fg[green]%}%c %{$fg[blue]%}\
-
 autoload colors zsh/terminfo
 if [[ "$terminfo[colors]" -ge 8 ]]; then
   colors
@@ -60,3 +54,13 @@ export RUBYLIB="lib:test:$RUBYLIB"
 
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
+
+# Prompt setup
+autoload -U colors
+colors
+
+# Uses red color for exit status > 0
+local symbol="%(?,%{$fg[green]%}∞%{$reset_color%},%{$fg[red]%}∞%{$reset_color%})"
+
+PROMPT='%c ${symbol} %{$reset_color%}'
+RPROMPT='%{$fg[white]%} $(~/.zsh/functions/git-cwd-info.rb)%{$reset_color%}'
