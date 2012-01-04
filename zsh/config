@@ -52,8 +52,10 @@ export RUBYLIB="lib:test:$RUBYLIB"
 
 # Rbenv
 
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+if (( $+commands[rbenv-name] )) ; then
+  export PATH="$HOME/.rbenv/bin:$PATH"
+  eval "$(rbenv init -)"
+fi
 
 # Prompt setup
 autoload -U colors
