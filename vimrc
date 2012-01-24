@@ -4,7 +4,7 @@ let mapleader = ","
 " Call pathogen
 call pathogen#runtime_append_all_bundles()
 
-set nocompatible      " no vi like behavior
+set nocompatible                      " No vi like behavior
 set cf                                " Enable error files & error jumping.
 set history=256                       " Number of things to remember in history.
 set autowrite                         " Writes on make/shell commands
@@ -15,21 +15,21 @@ set timeoutlen=250                    " Time to wait after ESC (default causes a
 set ignorecase                        " Ignore case when searching
 set smartcase                         " Except when searchstring includes a capital letter
 set autoread                          " Automatically pick up changes in files, like after git checkout
-set scrolloff=9                       " Start scrolling 3 lines before edge of viewport
+set scrolloff=9                       " Start scrolling 9 lines before edge of viewport
 set sidescrolloff=3                   " Same, but for columns
 set ttimeoutlen=50                    " Speed up O etc in the Terminal
 set virtualedit=block                 " Allow cursor to move where there is no text in visual block mode
 set showmatch                         " Show matching brackets.
 set mat=5                             " Bracket blinking.
-set wildignore+=*.o,.git,*tmp,*.png,*.jpg,*.log,*.sqlite3
 set laststatus=2                      " Always show status line.
 set lazyredraw                        " Don't redraw when it's not needed
+set wildmenu
+set wildignore+=*.o,.git,*tmp,*.png,*.jpg,*.log,*.sqlite3
 
 set shiftwidth=2                      " Spaces per tab (when shifting)
 set tabstop=2                         " Spaces per tab
 set expandtab                         " Always use spaces instead of tabs
 set smarttab                          " <tab>
-set autoindent
 set bs=2                              " Backspace over everything in insert mode
 
 set guifont=Meslo\ LG\ S\ DZ:h14.00
@@ -40,6 +40,9 @@ set noerrorbells
 set visualbell
 set t_vb=
 set nocp incsearch
+
+" Formatting and indentation options
+set autoindent
 set cinoptions=:0,p0,t0
 set cinwords=if,else,while,do,for,switch,case
 set formatoptions=tcqr
@@ -60,9 +63,9 @@ let g:ackprg="ack -H --nocolor --nogroup --column"
 map <leader>a :Ack<space>
 
 " NERDTree
-:noremap ,n :NERDTreeToggle<CR>
+noremap ,n :NERDTreeToggle<CR>
 
-" page through quickfix results
+" page through quickfix results with cmd-J cmd-K
 map <D-J> :cnext<CR>
 map <D-K> :cprev<CR>
 
@@ -103,9 +106,6 @@ set showcmd
 " Load matchit
 runtime! plugins/matchit.vim
 
-" Use O in insert mode
-imap <C-O> <end><cr>
-
 " Dont want to edit these files
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi
 
@@ -124,13 +124,12 @@ noremap! <Right> <Esc>
 nmap <silent> <Leader>b :LustyJuggler<CR>
 let g:LustyJugglerSuppressRubyWarning = 1
 
-" fugitive
-nmap <silent> <Leader>s :Gstatus<CR>
-
+" Binds for vertical and horizontal splits
 map <Leader>v :vsplit<CR>
 map <Leader>s :split<CR>
 
-:set splitright "open split on the right
+" Open split on the right
+set splitright
 
 " function to delete complete method
 function! DeleteMethod()
@@ -142,41 +141,34 @@ endfunction
 
 map <Leader>d :call DeleteMethod()<CR>
 
-" Rename :W to :w
-cmap W w
-
-let g:JSLintHighlightErrorLine = 1
-
+" Set colors to 256
 set t_Co=256
 
 " Indent and remember position
-map   <silent> <F5> mmgg=G`m^
+map <silent><F5> mmgg=G`m^
 
 " Toggle the quickfix window
 function! QfToggle()
-    for i in range(1, winnr('$'))
-        let bnum = winbufnr(i)
-        if getbufvar(bnum, '&buftype') == 'quickfix'
-            cclose
-            return
-        endif
-    endfor
+  for i in range(1, winnr('$'))
+    let bnum = winbufnr(i)
+    if getbufvar(bnum, '&buftype') == 'quickfix'
+      cclose
+      return
+    endif
+  endfor
 
-    copen
+  copen
 endfunction
 
 map <Leader>q :call QfToggle()<CR>
-
-set wildmenu
-
-" Autoresize windows when resizing MacVim
-autocmd VimResized * wincmd =
 
 " Disable manual key
 nnoremap K <nop>
 vnoremap K <nop>
 
+" Handle often made typing errors
 command W w
 command Wq wq
 command Q q
 command Qa qa
+
