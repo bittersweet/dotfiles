@@ -76,6 +76,7 @@ autocmd BufWritePre * :%s/\s\+$//e
 colorscheme Zenburn
 set cursorline                          " show the current line
 if has("gui_macvim")
+  colorscheme Espresso
   set linespace=2
   set showtabline=1
   set guioptions-=m
