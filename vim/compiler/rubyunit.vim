@@ -1,8 +1,7 @@
 " Vim compiler file
 " Language:		Test::Unit - Ruby Unit Testing Framework
 " Maintainer:		Doug Kearns <dougkearns@gmail.com>
-" Last Change:		2008 Aug 1
-" URL:			http://vim-ruby.rubyforge.org
+" URL:			https://github.com/vim-ruby/vim-ruby
 " Anon CVS:		See above site
 " Release Coordinator:	Doug Kearns <dougkearns@gmail.com>
 
@@ -33,4 +32,3 @@ let &cpo = s:cpo_save
 unlet s:cpo_save
 
 " vim: nowrap sw=2 sts=2 ts=8:
-
