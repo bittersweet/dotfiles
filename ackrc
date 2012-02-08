@@ -4,5 +4,6 @@
 --type-set=yaml=.yml
 --type-set=jst=.jst
 --type-set=coffee=.coffee
+--type-set=mustache=.mustache
 --ignore-dir=coverage
 --ignore-dir=tmp
