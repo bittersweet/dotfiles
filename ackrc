@@ -5,5 +5,6 @@
 --type-set=jst=.jst
 --type-set=coffee=.coffee
 --type-set=mustache=.mustache
+--type-set=rake=.rake
 --ignore-dir=coverage
 --ignore-dir=tmp
