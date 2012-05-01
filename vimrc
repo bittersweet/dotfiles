@@ -91,15 +91,14 @@ if has("gui_macvim")
 endif
 
 " Tcomment
-map <Leader>c :TComment<CR>
+map <leader>c :TComment<CR>
 
 " Ragtag
 let g:ragtag_global_maps = 1
 
-" Command + t
-let g:CommandTMatchWindowAtTop = 1
-let g:CommandTMaxHeight = 15
-map <leader>p :CommandTFlush<CR>
+" Ctrl-P
+let g:ctrlp_map = '<leader>t'
+map <leader>p :CtrlPClearCache<CR>
 
 " Shows what you are typing as a command
 set showcmd
