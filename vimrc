@@ -172,3 +172,5 @@ command Wq wq
 command Q q
 command Qa qa
 
+" Don't display full paths
+let g:Powerline_stl_path_style = 'short'
