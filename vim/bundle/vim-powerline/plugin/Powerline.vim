@@ -10,19 +10,36 @@
 
 	let g:Powerline_loaded = 1
 " }}}
+" Commands {{{
+	command! PowerlineClearCache call Pl#ClearCache()
+	command! PowerlineReloadColorscheme call Pl#ReloadColorscheme()
+" }}}
 " Set default options {{{
-	function! s:InitOptions(options) " {{{
-		for [key, value] in items(a:options)
-			if ! exists('g:Powerline_' . key)
-				exec printf('let g:Powerline_%s = %s', key, string(value))
-			endif
-		endfor
-	endfunction " }}}
-	call s:InitOptions({
-	\   'theme'        : 'distinguished'
-	\ , 'symbols'      : 'compatible'
-	\ , 'cache_file'   : '/tmp/Powerline.cache'
-	\ })
+	for [s:key, s:value] in items({
+		\   'theme'            : 'default'
+		\ , 'colorscheme'      : 'default'
+		\ , 'symbols'          : 'compatible'
+		\ , 'symbols_override' : {}
+		\ , 'dividers_override': []
+		\ , 'stl_path_style'   : 'relative'
+		\ , 'cache_enabled'    : 1
+		\ })
+
+		if ! exists('g:Powerline_' . s:key)
+			exec printf('let g:Powerline_%s = %s', s:key, string(s:value))
+		endif
+
+		unlet! s:key s:value
+	endfor
+
+	if ! exists('g:Powerline_cache_file')
+		exec 'let g:Powerline_cache_file = '. string(printf('%s/Powerline_%s_%s_%s.cache'
+			\ , simplify(expand('<sfile>:p:h') .'/..')
+			\ , g:Powerline_theme
+			\ , g:Powerline_colorscheme
+			\ , g:Powerline_symbols
+			\ ))
+	endif
 " }}}
 " Autocommands {{{
 	augroup Powerline
@@ -33,9 +50,12 @@
 			\ call Pl#Load()
 
 		au BufEnter,WinEnter,FileType,BufUnload *
-			\ call Pl#UpdateStatusline(1)
+			\ call Pl#UpdateStatusline(1) | redrawstatus
 
 		au BufLeave,WinLeave *
-			\ call Pl#UpdateStatusline(0)
+			\ call Pl#UpdateStatusline(0) | redrawstatus
+
+		au BufWritePost */autoload/Powerline/Colorschemes/*.vim
+			\ :PowerlineReloadColorscheme
 	augroup END
 " }}}
