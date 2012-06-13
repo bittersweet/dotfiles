@@ -147,6 +147,10 @@ set t_Co=256
 " Indent and remember position
 map <silent><F5> mmgg=G`m^
 
+" run focussed tests
+map <silent><F6> <Plug>SendTestToTmux
+map <silent><F7> <Plug>SendFocusedTestToTmux
+
 " Toggle the quickfix window
 function! QfToggle()
   for i in range(1, winnr('$'))
