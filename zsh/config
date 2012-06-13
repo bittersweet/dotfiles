@@ -65,4 +65,4 @@ colors
 local symbol="%(?,%{$fg[green]%}∞%{$reset_color%},%{$fg[red]%}∞%{$reset_color%})"
 
 PROMPT='%c ${symbol} %{$reset_color%}'
-RPROMPT='%{$fg[green]%} $(~/.zsh/functions/git-cwd-info.rb) %{$reset_color%}'
+RPROMPT='%{$fg[green]%} $(~/.zsh/functions/git-cwd-info.sh) %{$reset_color%}'
