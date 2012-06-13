@@ -170,6 +170,9 @@ map <Leader>q :call QfToggle()<CR>
 nnoremap K <nop>
 vnoremap K <nop>
 
+" Disable Ex mode
+map Q <nop
+
 " Handle often made typing errors
 command W w
 command Wq wq
