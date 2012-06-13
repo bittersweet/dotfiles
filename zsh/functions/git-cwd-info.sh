@@ -12,7 +12,9 @@ GIT_REPO_PATH=`git rev-parse --git-dir 2>/dev/null`
 if [[ $GIT_REPO_PATH != '' && $GIT_REPO_PATH != '~' && $GIT_REPO_PATH != "$HOME/.git" ]]; then
 
   GIT_BRANCH=`git symbolic-ref -q HEAD | sed 's/refs\/heads\///'`
-  GIT_COMMIT_ID=`git rev-parse --short HEAD 2>/dev/null`
+  if [[ "$GIT_BRANCH" == "" ]]; then
+    GIT_BRANCH=`git rev-parse --short HEAD 2>/dev/null`
+  fi
 
   GIT_MODE=""
   if [[ -e "$GIT_REPO_PATH/BISECT_LOG" ]]; then
@@ -28,5 +30,5 @@ if [[ $GIT_REPO_PATH != '' && $GIT_REPO_PATH != '~' && $GIT_REPO_PATH != "$HOME/
     GIT_DIRTY=" %{[90m%}✗%{[0m%}"
   fi
 
-  echo " %{[90m%}$GIT_BRANCH %{[37m%}$GIT_COMMIT_ID%{[0m%}$GIT_MODE$GIT_DIRTY"
+  echo " %{[90m%}$GIT_BRANCH%{[0m%}$GIT_MODE$GIT_DIRTY"
 fi
