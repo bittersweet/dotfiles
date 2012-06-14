@@ -185,3 +185,5 @@ let g:Powerline_stl_path_style = 'short'
 
 set shiftround " Round indent to multiples of shiftwidth
 
+" Use find on linux/osx to speed up file indexing
+let g:ctrlp_user_command = 'find %s -type f'
