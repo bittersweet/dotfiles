@@ -64,6 +64,7 @@ map <leader>a :Ack<space>
 
 " NERDTree
 noremap ,n :NERDTreeToggle<CR>
+let NERDTreeHijackNetrw=0
 
 " page through quickfix results with cmd-J cmd-K
 map <D-J> :cnext<CR>
