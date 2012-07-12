@@ -1,0 +1,2 @@
+# output relevant txt file
+cat ~/dotfiles/notes/$1.txt
