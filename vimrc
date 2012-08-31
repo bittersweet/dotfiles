@@ -74,10 +74,11 @@ map <D-K> :cprev<CR>
 autocmd BufWritePre * :%s/\s\+$//e
 
 " Colors
-colorscheme Zenburn
+colorscheme hemisu
+set background=light
+
 set cursorline                          " show the current line
 if has("gui_macvim")
-  colorscheme Espresso
   set linespace=2
   set showtabline=1
   set guioptions-=m
