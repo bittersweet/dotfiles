@@ -216,3 +216,11 @@ function! GoodMatch(items, str, limit, mmode, ispath, crfile, regex)
 
   return split(system(cmd), "\n")
 endfunction
+
+" Quick function to place after the first occurence of a = or -.
+" This fixes a pet peeve of mine that there should be a space after it in HAML
+" /e is to silence the output if no match is found
+function! FixHaml()
+  :%s/^\(\s*\)\(=\)\(\S\)/\1\2 \3/e
+  :%s/^\(\s*\)\(-\)\(\S\)/\1\2 \3/e
+endfunction
