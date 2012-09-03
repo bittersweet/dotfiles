@@ -224,3 +224,10 @@ function! FixHaml()
   :%s/^\(\s*\)\(=\)\(\S\)/\1\2 \3/e
   :%s/^\(\s*\)\(-\)\(\S\)/\1\2 \3/e
 endfunction
+
+" Same but for ERB, could package this into a plugin of some sort
+function! FixErb()
+  :%s/^\(\s*\)\(<%=\)\(\S\)/\1\2 \3/e
+  :%s/^\(\s*\)\(<%-\)\(\S\)/\1\2 \3/e
+  :%s/^\(\s*\)\(<%\)\(\S\)/\1\2 \3/e
+endfunction
