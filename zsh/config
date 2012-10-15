@@ -2,6 +2,7 @@ export PATH="~/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/loca
 export PATH=$PATH:/Users/markmulder/sources
 export PATH=$PATH:/Users/markmulder/dotfiles/zsh/functions
 export MANPATH="/usr/local/man:/usr/local/mysql/man:/usr/local/git/man:$MANPATH"
+export GOPATH="/Users/markmulder/sources/go:"
 
 fpath=(~/.zsh/functions $fpath)
 
