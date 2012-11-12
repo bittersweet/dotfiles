@@ -102,7 +102,7 @@ endfunction
 " Highlights - Vim >= 7 ------------------------------------{{{
 if version >= 700
 	call s:h("CursorLine",  { "bg": s:faint })
-	call s:h("MatchParen",  { "fg": s:accent1, "bg": s:faint, "gui": "bold" })
+	call s:h("MatchParen",  { "fg": s:accent1, "bg": s:faintRed, "gui": "bold" })
 	call s:h("Pmenu",       { "bg": s:faint })
 	call s:h("PmenuThumb",  { "bg": s:norm })
 	call s:h("PmenuSBar",   { "bg": s:subtle })
@@ -126,7 +126,7 @@ endif
 call s:h("Normal",       { "fg": s:norm, "bg": s:bg })
 call s:h("NonText",      { "fg": s:subtle })
 call s:h("Cursor",       { "fg": s:bg, "bg": s:accent3 })
-call s:h("Visual",       { "bg": s:faintBlue })
+call s:h("Visual",       { "bg": s:faintRed })
 call s:h("IncSearch",    { "bg": s:faintBlue })
 call s:h("Search",       { "bg": s:faintGreen })
 call s:h("StatusLine",   { "fg": s:norm, "bg": s:faint, "gui": "bold", "cterm": "bold" })
