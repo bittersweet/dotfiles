@@ -30,3 +30,5 @@ alias ship='git push && cap deploy'
 
 alias ack='ack'
 alias cheat='cheat'
+
+alias hosts='sudo vim /etc/hosts'
