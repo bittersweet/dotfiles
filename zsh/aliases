@@ -12,7 +12,6 @@ alias sc='script/console'
 alias ss='script/server'
 alias migrate='bundle exec rake db:migrate && bundle exec rake db:migrate RAILS_ENV=test'
 alias redo='bundle exec rake db:migrate:redo && bundle exec rake db:migrate:redo RAILS_ENV=test'
-alias routes='bundle exec rake routes'
 
 # SSH
 alias bz='ssh -p 30000 mark@ikbenbitterzoet.com'

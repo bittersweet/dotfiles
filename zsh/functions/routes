@@ -1,0 +1,5 @@
+if [ $1 ]; then
+  bundle exec rake routes | grep $1
+else
+  bundle exec rake routes
+fi
