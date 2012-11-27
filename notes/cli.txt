@@ -1,0 +1,2 @@
+List directory size recursively
+$ du -hs

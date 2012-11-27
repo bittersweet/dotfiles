@@ -1,0 +1,3 @@
+Delete all lines matching pattern
+
+:g/match/d
