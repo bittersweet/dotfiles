@@ -5,15 +5,16 @@ License: Same terms as Vim itself (see |license|)
 
 This plugin is only available if 'compatible' is not set.
 
-This plugin depends on tslime.vim, and optionally rails.vim. As with
-tslime.vim, it is only useful within a tmux session.
+This plugin depends on tslime.vim or vimux, whichever is available. It
+also depends optionally on rails.vim. As with tslime.vim, it is only
+useful within a tmux session.
 
 INTRODUCTION                                    *turbux*
 
 Turbux is designed to speed up your TDD cycle by using a single key
 mapping to run the most relevant test based on the current file in vim.
 It uses tmux's scriptability to send commands to a chosen pane in your
-tmux session, by way of tslime.vim.
+tmux session, by way of tslime.vim or vimux.
 
 The default mapping for invoking the plugin is <leader>t. In a spec
 file, this will run "rspec <filename>". In a test-unit file, this will
@@ -60,6 +61,22 @@ runs only the example or group under the cursor.
 The default mapping for focused test output is <leader>T.
 
 
+CONFIGURATION                                    *turbux-config*
+
+Use the following in your vimrc to set a common command prefix for prepending
+all commands:
+>
+          let g:turbux_command_prefix = 'bundle exec' " default: (empty)
+<
+You can also choose your own commands for each test framework. A command use
+case is to use 'spec' instead of 'rspec' for older versions of RSpec.
+>
+          let g:turbux_command_rspec  = 'spec'        " default: rspec
+          let g:turbux_command_test_unit = 'ruby'     " default: ruby -Itest
+          let g:turbux_command_cucumber = 'cucumber'  " default: cucumber
+          let g:turbux_command_turnip = 'rspec'       " default: rspec -rturnip
+<
+
 MAPPING                                         *turbux-mappings*
 
 <Plug>SendTestToTmux              Normal invocation
@@ -70,5 +87,13 @@ And the following are available unless "g:no_turbux_mappings" is set:
 
 <leader>t                         Normal invocation
 <leader>T                         Focused test
+
+To use custom mappings, you can put something like the following in your
+vimrc:
+>
+          let g:no_turbux_mappings = 1
+          map <leader>rt <Plug>SendTestToTmux
+          map <leader>rT <Plug>SendFocusedTestToTmux
+<
 
  vim:tw=78:et:ft=help:norl:

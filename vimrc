@@ -231,3 +231,8 @@ function! FixErb()
   :%s/^\(\s*\)\(<%-\)\(\S\)/\1\2 \3/e
   :%s/^\(\s*\)\(<%\)\(\S\)/\1\2 \3/e
 endfunction
+
+" Setup Turbux keybindings
+let g:no_turbux_mappings = 1
+map <leader>f <Plug>SendTestToTmux
+map <leader>F <Plug>SendFocusedTestToTmux
