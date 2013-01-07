@@ -192,6 +192,9 @@ let g:slime_target = "tmux"
 let g:ctrlp_map = '<leader>t'
 map <leader>p :CtrlPClearCache<CR>
 
+" Open file even if it's opened in another buffer already
+let g:ctrlp_jump_to_buffer = 1
+
 let g:path_to_matcher = "/usr/local/bin/matcher"
 let g:ctrlp_user_command = ['.git/', 'cd %s && git ls-files . -co --exclude-standard']
 let g:ctrlp_match_func = { 'match': 'GoodMatch' }
