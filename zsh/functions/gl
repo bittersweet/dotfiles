@@ -1,1 +1,5 @@
-git log -n $1
+if [ $1 ]; then
+  git log -n $1
+else
+  git log
+fi
