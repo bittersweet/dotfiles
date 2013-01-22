@@ -1,0 +1,2 @@
+Only operate on files with the given type
+$ ack --type=ruby PATTERN
