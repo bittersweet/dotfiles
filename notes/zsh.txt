@@ -1,0 +1,2 @@
+# Scroll through command history
+M-n | M-p

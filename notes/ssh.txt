@@ -1,0 +1,5 @@
+# end ssh connection
+<RETURN> ~ .
+
+# show available commands
+<RETURN> ~ ?

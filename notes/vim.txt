@@ -1,3 +1,8 @@
 Delete all lines matching pattern
 
 :g/match/d
+
+Write special characters from the terminal (é etc)
+^k letter character
+^k e ' to get é
+

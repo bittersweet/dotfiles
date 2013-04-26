@@ -1,2 +1,5 @@
 List directory size recursively
 $ du -hs
+
+# sort column N as a number, in reverse
+ps aux | sort -k 6 -n -r
