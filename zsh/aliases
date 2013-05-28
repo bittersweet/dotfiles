@@ -6,6 +6,7 @@ alias ga='git commit -a --amend -C HEAD'
 alias gc='git checkout'
 alias gm='git merge'
 alias amend='git commit --amend'
+alias prune='git remote prune origin'
 
 # Rails
 alias sc='script/console'
