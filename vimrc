@@ -81,19 +81,6 @@ colorscheme hemisu
 set background=light
 
 set cursorline                          " show the current line
-if has("gui_macvim")
-  set linespace=2
-  set showtabline=1
-  set guioptions-=m
-  set guioptions-=T                       " Don't show toolbar"
-  set guioptions-=l
-  set guioptions-=L
-  set guioptions-=r
-  set guioptions-=r                       " Don't show right scrollbar
-  set guioptions-=R
-  set fuoptions=maxvert,maxhorz
-  map <leader>f :set invfullscreen<CR>    " Switch to fullscreen
-endif
 
 " Tcomment
 map <leader>c :TComment<CR>
