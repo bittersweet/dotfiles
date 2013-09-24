@@ -1,3 +1,14 @@
+# Only search with case sensitivity if there is mixed case.
+--smart-case
+
+# Follow symlinks.
+--follow
+
+# Some basic ignores.
+--ignore-dir=log
+--ignore-dir=tmp
+--ignore-dir=coverage
+
 --type-set=haml=.haml
 --type-set=cucumber=.feature
 --type-set=sass=.sass
@@ -5,6 +16,5 @@
 --type-set=jst=.jst
 --type-set=coffee=.coffee
 --type-set=mustache=.mustache
---type-set=rake=.rake
 --ignore-dir=coverage
 --ignore-dir=tmp
