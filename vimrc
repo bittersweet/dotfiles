@@ -73,6 +73,9 @@ map <D-K> :cprev<CR>
 " Automatically remove trailing whitespace on save
 autocmd BufWritePre * :%s/\s\+$//e
 
+" Set tabstop to 4 for JS
+autocmd Filetype javascript setlocal ts=4 sts=4 sw=4
+
 " Colors
 colorscheme hemisu
 set background=light
