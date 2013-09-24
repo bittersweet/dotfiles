@@ -3,3 +3,16 @@ $ du -hs
 
 # sort column N as a number, in reverse
 ps aux | sort -k 6 -n -r
+
+# find files via spotlight index
+mdfind -name homebrew
+
+# find .nfo files and delete
+find . -type f -name "*.nfo" -exec rm {} \;
+
+# follow file (like tail -f)
+less file, F when active
+# interrupt, /searchstring, F again
+
+# Print N column (1-indexed)
+cat file | awk {'print $N'}

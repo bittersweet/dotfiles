@@ -19,3 +19,5 @@ Space
 # Kill window (default is &)
 :kill-window
 
+# Send command to all panes in window
+:setw synchronize-panes

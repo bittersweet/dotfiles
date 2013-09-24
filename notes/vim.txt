@@ -2,6 +2,9 @@ Delete all lines matching pattern
 
 :g/match/d
 
+:g!/match/d (remove every line that doesn't match)
+:v/match/d (equivalent)
+
 Write special characters from the terminal (é etc)
 ^k letter character
 ^k e ' to get é
