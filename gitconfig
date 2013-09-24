@@ -10,6 +10,7 @@
 	excludesfile = /Users/markmulder/.gitignore
 	pager = less
 	editor = /usr/bin/vim
+	commentchar = @
 [github]
 	user = bittersweet
   token = 60e01428916a160be0e0456c99bc1cc8
