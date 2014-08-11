@@ -32,3 +32,6 @@ alias ack='ack'
 alias cheat='cheat'
 
 alias hosts='sudo vim /etc/hosts'
+
+# Set MC color scheme
+alias mc='mc -S sand256'
