@@ -4,6 +4,10 @@ export PATH=$PATH:/Users/markmulder/dotfiles/zsh/functions
 export MANPATH="/usr/local/man:/usr/local/mysql/man:/usr/local/git/man:$MANPATH"
 export GOPATH="/Users/markmulder/sources/go:"
 
+export LANGUAGE=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
 fpath=(~/.zsh/functions $fpath)
 
 autoload -U ~/.zsh/functions/*(:t)
