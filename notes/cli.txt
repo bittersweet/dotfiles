@@ -1,4 +1,4 @@
-List directory size recursively
+# List directory size recursively
 $ du -hs
 
 # sort column N as a number, in reverse
@@ -9,6 +9,7 @@ mdfind -name homebrew
 
 # find .nfo files and delete
 find . -type f -name "*.nfo" -exec rm {} \;
+find . -type f -name "*.rar" -exec unrar e {} ./ \;
 
 # follow file (like tail -f)
 less file, F when active
@@ -16,3 +17,21 @@ less file, F when active
 
 # Print N column (1-indexed)
 cat file | awk {'print $N'}
+
+# Cut first N characters
+cut -c 40-
+
+# Cut on & character and use first group
+cut -d '%' -f 1
+
+# Show open files by pid
+lsof -p $PID
+
+# rename *.jpg123 to *.jpg (-n for dryrun)
+rename 's/\.jpg.*/\.jpg/' *
+
+# pretty print JSON file
+cat file.json | python -m json.tool > pretty.json
+
+# Sync two directories
+rsync -azP local/ host:~/external/
