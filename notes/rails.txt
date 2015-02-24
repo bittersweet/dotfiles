@@ -1,0 +1,2 @@
+# Show generated cache key
+ActiveSupport::Cache.expand_cache_key ["v3", "training", training]

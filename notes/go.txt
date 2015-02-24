@@ -1,0 +1,2 @@
+# Generate go struct definition from json file
+curl http://url.tld/file.json | gojson -name=Repository

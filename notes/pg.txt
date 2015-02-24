@@ -1,0 +1,11 @@
+# Dump only the given tables from pg
+# -a: Dump only the data, not the schema
+# -O: Skip restoration of object ownership in
+# -x: Do not dump privileges (grant/revoke)
+# ssh pgd06.springe.st
+# sudo su postgres
+pg_dump -aOx -t TABLE_NAME translations > translations.sql
+
+# truncate table + import dump
+psql springest_development; truncate translations;
+psql springest_development < translations.sql

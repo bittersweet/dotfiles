@@ -1,0 +1,2 @@
+# convert flv (youtube) to mp3
+ffmpeg -i input -acodec libmp3lame -aq 0 output.mp3

@@ -9,3 +9,5 @@
 ^k letter character
 ^k e ' to get é
 
+# Set custom tslime command
+nmap <leader>t :Tmux command<CR>

@@ -1,0 +1,2 @@
+# Remove everything but audio track N
+ffmpeg -o output.mkv -a 2 --no-subtitles --no-attachments file.mkv

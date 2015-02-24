@@ -1,0 +1,6 @@
+# Write to file
+File.open('filename', 'w') { |file| file.write("your text") }
+
+# Save stdout to file
+$stdout.reopen('out.txt', 'w')
+pp ['bla']

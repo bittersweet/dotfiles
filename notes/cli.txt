@@ -10,6 +10,7 @@ mdfind -name homebrew
 # find .nfo files and delete
 find . -type f -name "*.nfo" -exec rm {} \;
 find . -type f -name "*.rar" -exec unrar e {} ./ \;
+find . -type f -name "*.avi" -exec mv {} ./ \;
 
 # follow file (like tail -f)
 less file, F when active
@@ -35,3 +36,28 @@ cat file.json | python -m json.tool > pretty.json
 
 # Sync two directories
 rsync -azP local/ host:~/external/
+
+# Fix weird terminal issues
+stty sane
+
+# List files lower than $ filesize (Use + for bigger, you can use both at the same time)
+find . -size -1M -ls
+
+# Find out what a process is doing
+sudo strace -s 999 -fp PID
+# Check FD's etc via lsof to see what it is
+sudo lsof -p PID
+# u Read/Write
+# r Read
+# w Write
+# W Write + write lock on file
+
+# Show/hide kernel + user threads in htop
+H / K
+
+# Parallel download files from a list
+# per one, max 8, quiet
+cat list.txt | xargs -n 1 -P 8 wget -q
+
+# Move files below 100M
+find . -type f -size -100M -print0 | xargs -0 mv -t ~/location/
