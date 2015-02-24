@@ -1,0 +1,6 @@
+NETWORK=`current_network`
+if [ "$NETWORK" = "bitterzoet"  ]; then
+  scp *.nzb athena:~/downloads/watch/nfl/ && rm *.nzb
+else
+  scp *.nzb athenaext:~/downloads/watch/nfl/ && rm *.nzb
+fi

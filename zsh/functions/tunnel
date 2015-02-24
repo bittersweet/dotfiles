@@ -1,0 +1,10 @@
+if [ $1 ]; then
+  # ssh -f -N -D 9999 $1 &
+  ssh -f -N -D 9999 $1
+else
+  # ssh -N -D 9999 athenaext &
+  ssh -N -D 9999 athenaext
+fi
+PID=$!
+
+echo "Tunnel opened on pid "$PID", connect to port 9999"
