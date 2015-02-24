@@ -25,6 +25,7 @@ set laststatus=2                      " Always show status line.
 set lazyredraw                        " Don't redraw when it's not needed
 set wildmenu
 set wildignore+=*.o,.git,*tmp,*.png,*.jpg,*.log,*.sqlite3
+set nofoldenable                      " disable folding"
 
 set shiftwidth=2                      " Spaces per tab (when shifting)
 set tabstop=2                         " Spaces per tab
@@ -77,8 +78,16 @@ autocmd BufWritePre * :%s/\s\+$//e
 autocmd Filetype javascript setlocal ts=4 sts=4 sw=4
 
 " Colors
-colorscheme hemisu
-set background=light
+" let g:hybrid_use_iTerm_colors = 1
+" colorscheme hybrid
+" set background=dark
+let g:lucius_style='light'
+let g:lucius_contrast='high'
+let g:lucius_contrast_bg='high'
+colorscheme lucius
+" colorscheme seoul256
+" colorscheme hemisu
+" colorscheme smyck
 
 set cursorline                          " show the current line
 
@@ -126,7 +135,6 @@ function! DeleteMethod()
   exe "norm j"
   exe "norm D"
 endfunction
-
 map <Leader>d :call DeleteMethod()<CR>
 
 " Set colors to 256
@@ -229,3 +237,19 @@ endfunction
 let g:no_turbux_mappings = 1
 map <leader>f <Plug>SendTestToTmux
 map <leader>F <Plug>SendFocusedTestToTmux
+
+au FileType python setl tabstop=8 expandtab shiftwidth=4 softtabstop=4
+
+vmap <C-c><C-c> <Plug>SendSelectionToTmux
+nmap <C-c><C-c> <Plug>NormalModeSendToTmux
+" reset session:window:pane where commands are sent to
+nmap <C-c>r <Plug>SetTmuxVars
+
+" Rebind tmux key to run go tests
+au FileType go nmap <leader>f :Tmux go test<CR>
+
+" function to fix double spaces (not at the start of the line)
+" http://stackoverflow.com/questions/3860532/vim-regex-replace-multiple-consecutive-spaces-with-only-one-space
+function! FixDoubleSpaces()
+  silent! :%s/\v(^ *)@<! {2,}/ /g
+endfunction
