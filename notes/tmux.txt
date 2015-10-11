@@ -21,3 +21,9 @@ Space
 
 # Send command to all panes in window
 :setw synchronize-panes
+
+# Cycle between two last used panes
+leader +  ;
+
+# Break pane
+leader + !

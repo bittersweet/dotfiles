@@ -1,0 +1,2 @@
+# Closing and flushing sockets here worked for me to switch from staging <> production
+chrome://net-internals/#sockets

@@ -1,9 +1,8 @@
 # Delete all lines matching pattern
-
 :g/match/d
 
-:g!/match/d (remove every line that doesn't match)
-:v/match/d (equivalent)
+# remove every line that doesn't match
+:g!/match/d
 
 # Write special characters from the terminal (é etc)
 ^k letter character
@@ -11,3 +10,4 @@
 
 # Set custom tslime command
 nmap <leader>t :Tmux command<CR>
+

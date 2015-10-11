@@ -1,2 +1,8 @@
 # Generate go struct definition from json file
 curl http://url.tld/file.json | gojson -name=Repository
+
+# run, test or build while refreshing libraries (good for local changes)
+go run -a file.go
+
+# Run a subset of tests
+go test -run RegexpStartOfFunctionName

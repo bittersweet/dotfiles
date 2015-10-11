@@ -1,0 +1,3 @@
+# Inspect running webViews in simulator or attached USB device
+# https://developer.chrome.com/devtools/docs/remote-debugging
+chrome://inspect/#devices

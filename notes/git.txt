@@ -1,0 +1,5 @@
+# Find deleted file in commit history
+git log --all -- <path-to-file>
+
+# Compare a file over two branches
+git diff branch1 master -- Gemfile

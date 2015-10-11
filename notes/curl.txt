@@ -1,0 +1,6 @@
+# referer
+-H 'Referer: http://www.springest.nl.dev:3000/'
+
+# Get an image without a HEAD, because sometimes HEAD IS not cached by a CDN etc
+curl -svo /dev/null 'url.jpg'
+

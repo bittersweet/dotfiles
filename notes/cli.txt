@@ -12,9 +12,9 @@ find . -type f -name "*.nfo" -exec rm {} \;
 find . -type f -name "*.rar" -exec unrar e {} ./ \;
 find . -type f -name "*.avi" -exec mv {} ./ \;
 
-# follow file (like tail -f)
+# Follow file (like tail -f)
+# You can interrupt with ^c, /searchstring, F again to highlight matches live
 less file, F when active
-# interrupt, /searchstring, F again
 
 # Print N column (1-indexed)
 cat file | awk {'print $N'}
@@ -25,16 +25,13 @@ cut -c 40-
 # Cut on & character and use first group
 cut -d '%' -f 1
 
-# Show open files by pid
-lsof -p $PID
-
 # rename *.jpg123 to *.jpg (-n for dryrun)
 rename 's/\.jpg.*/\.jpg/' *
 
 # pretty print JSON file
 cat file.json | python -m json.tool > pretty.json
 
-# Sync two directories
+# Sync two directories (z is compress)
 rsync -azP local/ host:~/external/
 
 # Fix weird terminal issues
@@ -45,12 +42,13 @@ find . -size -1M -ls
 
 # Find out what a process is doing
 sudo strace -s 999 -fp PID
-# Check FD's etc via lsof to see what it is
-sudo lsof -p PID
+
+# Show open files by PID
 # u Read/Write
 # r Read
 # w Write
 # W Write + write lock on file
+sudo lsof -p PID
 
 # Show/hide kernel + user threads in htop
 H / K
@@ -61,3 +59,15 @@ cat list.txt | xargs -n 1 -P 8 wget -q
 
 # Move files below 100M
 find . -type f -size -100M -print0 | xargs -0 mv -t ~/location/
+
+# Start simple file server
+python -m SimpleHTTPServer
+
+# Download files from a list with xargs + youtube-dl
+cat listfile.txt | xargs -I {} youtube-dl {}
+
+# Join files together
+cat file00* > file.ext
+
+# Move files and rename if they already exist, does not work on OSX
+mv --backup=t $src $dest
