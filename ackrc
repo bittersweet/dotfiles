@@ -14,11 +14,13 @@
 --ignore-file=match:tags
 
 --type-set=haml=.haml
+--type-set=slim=.slim
 --type-set=cucumber=.feature
 --type-set=sass=.sass
 --type-set=yaml=.yml
 --type-set=jst=.jst
 --type-set=coffee=.coffee
 --type-set=mustache=.mustache
+--type-set=go=.go
 
 # more https://gist.github.com/pshizzle/2988102
