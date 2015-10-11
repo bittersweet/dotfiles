@@ -1,7 +1,7 @@
 # Git
 alias gd='git diff'
 alias gb='git branch'
-alias gs='git status'
+alias gs='git status -sb'
 alias ga='git commit -a --amend -C HEAD'
 alias gc='git checkout'
 alias gm='git merge'
@@ -22,9 +22,6 @@ alias bzd='ssh -p 30000 deploy@ikbenbitterzoet.com'
 alias bi='bundle install'
 alias be='bundle exec'
 
-# Misc
-alias ship='git push && cap deploy'
-
 # Setting these commands here because they were being
 # overwritten somehow
 
@@ -35,3 +32,5 @@ alias hosts='sudo vim /etc/hosts'
 
 # Set MC color scheme
 alias mc='mc -S sand256'
+
+alias y youtube-dl
