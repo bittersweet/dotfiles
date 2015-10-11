@@ -1,8 +1,10 @@
-export PATH="~/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/git/bin:/usr/local/bin/git:$PATH"
+export PATH=":/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:$PATH"
+export PATH=$PATH:/Users/markmulder/sources/go/bin
 export PATH=$PATH:/Users/markmulder/sources
 export PATH=$PATH:/Users/markmulder/dotfiles/zsh/functions
 export MANPATH="/usr/local/man:/usr/local/mysql/man:/usr/local/git/man:$MANPATH"
-export GOPATH="/Users/markmulder/sources/go:"
+export GOPATH="/Users/markmulder/sources/go"
+export PATH=$PATH:/usr/local/opt/go/libexec/bin
 
 export LANGUAGE=en_US.UTF-8
 export LANG=en_US.UTF-8
