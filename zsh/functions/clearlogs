@@ -1,0 +1,1 @@
+find log -name "*.log" -exec bash -c 'echo "" > {}' \;
