@@ -1,0 +1,7 @@
+/* TODO: set exit codes correctly so shell symbol works
+ * http://bencane.com/2014/09/02/understanding-exit-codes-and-how-to-use-them-in-bash-scripts/*/
+sh -c $1
+while [ $? -ne 0 ]; do
+  sh -c $1
+done
+

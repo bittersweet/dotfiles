@@ -1,0 +1,6 @@
+sh -c $1
+while [ $? -ne 1 ]; do
+  echo "Running $1"
+  sh -c $1
+done
+
