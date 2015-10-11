@@ -2,7 +2,8 @@
 let mapleader = ","
 
 " Call pathogen
-call pathogen#runtime_append_all_bundles()
+execute pathogen#infect()
+" call pathogen#runtime_append_all_bundles()
 
 set nocompatible                      " No vi like behavior
 set cf                                " Enable error files & error jumping.
@@ -75,7 +76,7 @@ map <D-K> :cprev<CR>
 autocmd BufWritePre * :%s/\s\+$//e
 
 " Set tabstop to 4 for JS
-autocmd Filetype javascript setlocal ts=4 sts=4 sw=4
+" autocmd Filetype javascript setlocal ts=4 sts=4 sw=4
 
 " Colors
 " let g:hybrid_use_iTerm_colors = 1
@@ -186,7 +187,6 @@ let g:slime_target = "tmux"
 " Ctrl-P setup
 " Uses matcher for the same fuzzy-find algorithm as Command-T
 " https://github.com/burke/matcher
-
 let g:ctrlp_map = '<leader>t'
 map <leader>p :CtrlPClearCache<CR>
 
@@ -233,6 +233,12 @@ function! FixErb()
   :%s/^\(\s*\)\(<%\)\(\S\)/\1\2 \3/e
 endfunction
 
+" function to fix double spaces (not at the start of the line)
+" http://stackoverflow.com/questions/3860532/vim-regex-replace-multiple-consecutive-spaces-with-only-one-space
+function! FixDoubleSpaces()
+  silent! :%s/\v(^ *)@<! {2,}/ /g
+endfunction
+
 " Setup Turbux keybindings
 let g:no_turbux_mappings = 1
 map <leader>f <Plug>SendTestToTmux
@@ -247,9 +253,22 @@ nmap <C-c>r <Plug>SetTmuxVars
 
 " Rebind tmux key to run go tests
 au FileType go nmap <leader>f :Tmux go test<CR>
+au FileType go nmap <leader>F :Tmux go run <c-r>%<CR>
+" explanation about <c-r>
+" http://stackoverflow.com/questions/737083/vim-how-to-use-variables-in-vimrc
 
-" function to fix double spaces (not at the start of the line)
-" http://stackoverflow.com/questions/3860532/vim-regex-replace-multiple-consecutive-spaces-with-only-one-space
-function! FixDoubleSpaces()
-  silent! :%s/\v(^ *)@<! {2,}/ /g
-endfunction
+au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
+au FileType go nmap <Leader>gs <Plug>(go-doc)
+
+let g:go_fmt_command = "goimports"
+
+" Yaml
+au BufNewFile,BufRead *.yaml,*.yml set filetype=ansible
+
+let g:jsx_ext_required = 0 " Allow JSX in normal JS files"
+
+" Toggle paste mode to copy+paste with F2
+set pastetoggle=<F2>
+
+let g:tslime_always_current_session = 1
+let g:tslime_always_current_window = 1
