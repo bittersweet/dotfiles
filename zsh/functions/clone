@@ -1,4 +1,4 @@
 # clones repo and cd's into directory
 # only works with host/username/repo.git format for now
 git clone $1
-cd `echo $1 | cut -f 5 -d/ | cut -f 1 -d.`
+cd `echo $1 | cut -f 2 -d "/" | cut -f 1 -d "."`
