@@ -78,3 +78,5 @@ export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 
 export ANDROID_HOME=/usr/local/opt/android-sdk
+
+eval "$(direnv hook zsh)"
