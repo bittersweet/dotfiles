@@ -6,3 +6,7 @@ go run -a file.go
 
 # Run a subset of tests
 go test -run RegexpStartOfFunctionName
+
+# Cross compile a go binary
+# https://golang.org/doc/install/source
+GOOS=linux GOARCH=386 CGO_ENABLED=0 go build .

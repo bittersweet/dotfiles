@@ -1,0 +1,6 @@
+# How to output debug statements
+- name: "print to stdout"
+  command: git --version
+  register: hello
+- debug: msg="{{ hello.stdout }}"
+- debug: msg="{{ hello.stderr }}"

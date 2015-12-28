@@ -3,3 +3,6 @@ git log --all -- <path-to-file>
 
 # Compare a file over two branches
 git diff branch1 master -- Gemfile
+
+# Display file as it was in a specific revision
+git show sha1:filename.ext
