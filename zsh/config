@@ -76,3 +76,5 @@ zle -N self-insert url-quote-magic
 
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
+
+export ANDROID_HOME=/usr/local/opt/android-sdk
