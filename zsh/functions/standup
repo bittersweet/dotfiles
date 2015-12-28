@@ -1,0 +1,3 @@
+# what did I commit in the last week
+git log --reverse --branches --since=1.weeks --author=$(git config --get user.email) --format=format:'%C(cyan) %ad %C(yellow) %h %Creset %s %C(green)%d' --date=local
+
