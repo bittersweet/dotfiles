@@ -27,6 +27,7 @@ cut -d '%' -f 1
 
 # rename *.jpg123 to *.jpg (-n for dryrun)
 rename 's/\.jpg.*/\.jpg/' *
+rename 's/(.*).jpg/tes_$1\.jpg/' *
 
 # pretty print JSON file
 cat file.json | python -m json.tool > pretty.json
@@ -76,3 +77,12 @@ mv --backup=t $src $dest
 # -k 2,2 means only sort on second field
 # -n is numerical sort, otherwise you get 100, 9, 80
 sort -t: -n -k2 file.txt
+
+# grep on non alphabetical
+pcregrep "[^a-zA-Z]" /usr/share/dict/words
+
+# see escape codes, hit it after entering cat
+cat <enter> alt-leftarrow
+
+# resize all jpg files and place them in resized/
+mogrify -path resized -resize 900x900\> */*.jpg

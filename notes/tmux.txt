@@ -4,11 +4,11 @@
 # Swap 2 windows
 :swap-window -s source -t destination
 
-# Join pane 0 from window 4 to current window
-:join-pane -s 4.0
+# Join pane 1 from window 4 to current window
+:join-pane -s 4.1
 
-# Join pane 0 from session 1 window 2 to current window
-:join-pane -s 1:2.0
+# Join pane 1 from session 1 window 2 to current window
+:join-pane -s 1:2.1
 
 # Rotate window
 C-o

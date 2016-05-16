@@ -6,3 +6,9 @@ git diff branch1 master -- Gemfile
 
 # Display file as it was in a specific revision
 git show sha1:filename.ext
+
+# See which commit introduced a line (pickaxe command)
+git log -p -S <line> path/to/file
+
+# Commit without any changes, useful to force specs or something like that
+git commit --allow-empty

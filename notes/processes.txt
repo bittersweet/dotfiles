@@ -1,2 +1,0 @@
-# Show open files by pid
-lsof -p $PID

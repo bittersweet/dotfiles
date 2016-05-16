@@ -3,3 +3,8 @@
 
 # show available commands
 <RETURN> ~ ?
+
+# copy public key to host
+brew install ssh-copy-id
+ssh-copy-id user@host
+
