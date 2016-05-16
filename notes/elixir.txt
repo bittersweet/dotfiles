@@ -1,0 +1,31 @@
+# Interactive debugging
+require IEx
+IEx.pry
+iex -S mix phoenix.server
+respawn # to continue execution
+
+# Update map keys
+m = %{:mark => "test"}
+%{m | mark: "test2"}
+
+# Get all records of a model
+Repo.all(Model)
+
+# Get an individual record
+Repo.get!(Model, 1
+
+# Do some more querying
+import Ecto.Query
+Model |> where([m], m.id > 1) |> Repo.all
+
+# Update a record
+Repo.update(changeset)
+Model |> where([m], m.id > 1) |> Repo.all
+
+# Insert a record
+m = %Model{name: "notes"}
+{:ok, inserted_model} = Application.Repo.insert(m)
+
+# Delete a record
+n = Repo.get!(Notifier, 1)
+Repo.delete(n)

@@ -1,0 +1,11 @@
+# Kill all running containers
+docker kill $(docker ps -q)
+
+# Clean up all images
+docker rmi -f $(docker images -q)
+
+# See build history of an image/tag
+docker history tagname
+
+# See logfile location (aws)
+docker inspect ID | grep LogPath

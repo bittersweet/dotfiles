@@ -1,0 +1,27 @@
+# Navigate to directories with `dired`, hit ? for more commands
+SPC a d
+
+# Navigate buffers via helm, ^n, ^p work to navigate
+SPC b b
+
+# Cycle between buffers
+SPC tab
+
+# go to last used HELM session (think Helm Last)
+SPC h l
+
+# Go to your .spacemacs file
+SPC f e d
+
+# Load changes to .spacemacs without restart
+SPC f e R
+
+# Staging and committing
+SPC g s # status
+SPC C-c C-c to execute commit when message is entered
+
+# Open neotree with tree opened on current file, hit again to toggle
+SPC p t
+
+# Fuzzy find commands with indication of key strokes
+SPC :

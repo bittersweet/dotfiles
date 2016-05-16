@@ -1,0 +1,4 @@
+# Open up a ssh connection
+# Won't give you an updating progress bar though, but you can mount NFS via the
+# finder and go to /Volumes/drive
+cd sh://user@server
