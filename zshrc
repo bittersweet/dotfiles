@@ -15,3 +15,5 @@ export RUBY_GC_MALLOC_LIMIT=79000000
 export PATH="/usr/local/heroku/bin:$PATH"
 
 export PATH="./bin:$PATH" # for binstubs, had to load it here otherwise rbenv path stuff gets precedence, eventhough I loaded the ./bin first
+
+export PATH="/usr/local/bin:$PATH" >> ~/.zshrc
