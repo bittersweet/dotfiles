@@ -7,7 +7,7 @@
 	branch = auto
 	interactive = auto
 [core]
-	excludesfile = /Users/markmulder/.gitignore
+	excludesfile = ~/.gitignore
 	pager = less
 	editor = /usr/bin/vim
 	commentchar = @
