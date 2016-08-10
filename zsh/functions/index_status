@@ -1,0 +1,1 @@
+ watch -d "curl --silent 'localhost:9200/_cat/indices?v'"
