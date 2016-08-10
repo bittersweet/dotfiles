@@ -12,3 +12,5 @@ bin/
 node_modules
 .rbenv-version
 dump.rdb
+.byebug_history
+*.pyc
