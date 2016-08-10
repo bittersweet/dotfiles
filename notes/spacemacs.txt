@@ -25,3 +25,19 @@ SPC p t
 
 # Fuzzy find commands with indication of key strokes
 SPC :
+
+# Create a file or folder with the tree (user file/ for folders)
+c
+
+# Run mix task
+, m x
+
+# Open iex -S mix
+, s I
+
+# Fetch a previous value returned by IEx
+v(-1)
+
+# Start up daemon and client
+emacs --daemon
+emacsclient --eval '(spacemacs/home)' -c

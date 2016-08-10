@@ -9,3 +9,9 @@ docker history tagname
 
 # See logfile location (aws)
 docker inspect ID | grep LogPath
+
+# Build docker image from Dockerfile
+docker build -t <name> .
+
+# Remove untagged images
+docker rmi $(docker images | grep "^<none>" | awk "{print $3}")

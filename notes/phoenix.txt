@@ -1,0 +1,2 @@
+# Run server in detached mode
+elixir --detached -S mix do compile, phoenix.server

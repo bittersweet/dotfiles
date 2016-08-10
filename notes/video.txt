@@ -1,2 +1,5 @@
 # Remove everything but audio track N
 ffmpeg -o output.mkv -a 2 --no-subtitles --no-attachments file.mkv
+
+# Convert .idx and .sub files to .srt
+vobsub2srt file

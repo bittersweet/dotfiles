@@ -19,8 +19,8 @@ import Ecto.Query
 Model |> where([m], m.id > 1) |> Repo.all
 
 # Update a record
+changeset = Model.changeset(record, %{attr: "new value"})
 Repo.update(changeset)
-Model |> where([m], m.id > 1) |> Repo.all
 
 # Insert a record
 m = %Model{name: "notes"}
@@ -29,3 +29,11 @@ m = %Model{name: "notes"}
 # Delete a record
 n = Repo.get!(Notifier, 1)
 Repo.delete(n)
+
+# Preload an association (videos)
+user = Repo.get!(User, 1)
+user = Repo.preload(user, :videos)
+
+# Fetch an association without storing it in the main struct
+query = Ecto.query(user, :videos) # will generate a query for you to execute
+Repo.all(query)

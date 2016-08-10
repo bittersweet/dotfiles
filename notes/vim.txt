@@ -11,3 +11,5 @@
 # Set custom tslime command
 nmap <leader>t :Tmux command<CR>
 
+# Refresh all open files
+checktime

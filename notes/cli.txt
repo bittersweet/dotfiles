@@ -4,6 +4,9 @@ $ du -hs
 # sort column N as a number, in reverse
 ps aux | sort -k 6 -n -r
 
+# kill all matching process
+ps aux | grep rake | awk '{print $2}' | xargs kill
+
 # find files via spotlight index
 mdfind -name homebrew
 
@@ -22,7 +25,7 @@ cat file | awk {'print $N'}
 # Cut first N characters
 cut -c 40-
 
-# Cut on & character and use first group
+# Cut on % character and use first group
 cut -d '%' -f 1
 
 # rename *.jpg123 to *.jpg (-n for dryrun)
@@ -73,16 +76,23 @@ cat file00* > file.ext
 # Move files and rename if they already exist, does not work on OSX
 mv --backup=t $src $dest
 
-# sort on delimiter, not blank (in this case file.rb:99)
+# Sort on delimiter, not blank (in this case file.rb:99)
 # -k 2,2 means only sort on second field
 # -n is numerical sort, otherwise you get 100, 9, 80
 sort -t: -n -k2 file.txt
 
-# grep on non alphabetical
+# Grep on non alphabetical
 pcregrep "[^a-zA-Z]" /usr/share/dict/words
 
-# see escape codes, hit it after entering cat
+# See escape codes, hit it after entering cat
 cat <enter> alt-leftarrow
 
-# resize all jpg files and place them in resized/
+# Resize all jpg files and place them in resized/
 mogrify -path resized -resize 900x900\> */*.jpg
+
+# Make an archive out of a directory
+tar -zcvf archive-name.tar.gz directory-name
+
+# Find out what process is using a port
+# OSX:
+lsof -n -iTCP:3000

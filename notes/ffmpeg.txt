@@ -6,3 +6,6 @@ ffmpeg -i input.mp4 -vcodec copy -af "volume=-30dB" output.mp4
 
 # make screenshots every second
 ffmpeg -i input.mp4 -vf fps=1 out%d.png
+
+# Record screen
+ffmpeg -f avfoundation -i "1:0" output.mov

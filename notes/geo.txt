@@ -1,0 +1,2 @@
+# Convert .gpx to geojson
+togeojson file.gpx > file.json

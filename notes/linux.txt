@@ -1,0 +1,5 @@
+# Find all installed packages
+dpkg --get-selections | grep -v deinstall
+
+# Get info about a package
+apt-cache show <package>
