@@ -1,0 +1,2 @@
+# http://osxdaily.com/2012/03/30/lock-mac-desktop-command-line/
+/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend
