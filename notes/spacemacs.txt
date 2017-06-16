@@ -41,3 +41,31 @@ v(-1)
 # Start up daemon and client
 emacs --daemon
 emacsclient --eval '(spacemacs/home)' -c
+
+# Create new layout (tab-like usage)
+SPC l l
+
+# Open a layout
+SPC l <number>
+
+# Helm-swoop to display all matches in a file (^t to switch vertical/horizontal)
+SPC s s
+
+# Search all files
+SPC /
+
+# Keep helm buffer open
+f3
+
+# Clear search highlight
+SPC s c
+
+# Increment numbers
+SPC n +
+SPC n -
+
+# Clear (projectile) cache
+SPC p I
+
+# Helm follow mode
+C-c C-f while in helm

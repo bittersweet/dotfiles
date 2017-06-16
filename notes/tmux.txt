@@ -27,3 +27,10 @@ leader +  ;
 
 # Break pane
 leader + !
+
+# Copy text
+leader [
+<space> to select text
+
+# Paste text
+leader ]

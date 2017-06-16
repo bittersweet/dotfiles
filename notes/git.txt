@@ -12,3 +12,9 @@ git log -p -S <line> path/to/file
 
 # Commit without any changes, useful to force specs or something like that
 git commit --allow-empty
+
+# find sha1 where a branch occurred
+git merge-base master <branch>
+
+# shallow clone
+git clone --depth 1 <url>

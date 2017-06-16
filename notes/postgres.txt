@@ -1,2 +1,5 @@
 # start postgres
 postgres -D /usr/local/var/postgres
+
+# Find out what connections are open
+select * from pg_stat_activity where datname = 'springest_development';

@@ -1,0 +1,2 @@
+# Output println while testing
+cargo test -- --nocapture

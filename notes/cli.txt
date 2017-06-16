@@ -90,9 +90,15 @@ cat <enter> alt-leftarrow
 # Resize all jpg files and place them in resized/
 mogrify -path resized -resize 900x900\> */*.jpg
 
+# Rotate images to exif value
+mogrify -auto-orient *.jpg
+
 # Make an archive out of a directory
 tar -zcvf archive-name.tar.gz directory-name
 
 # Find out what process is using a port
 # OSX:
 lsof -n -iTCP:3000
+
+# Remove word after cursor
+alt-d

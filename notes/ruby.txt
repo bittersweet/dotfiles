@@ -4,3 +4,6 @@ File.open('filename', 'a') { |file| file.write("your text") }
 # Save stdout to file
 $stdout.reopen('out.txt', 'a')
 pp ['bla']
+
+# Add collaborator to gem
+gem owner <gem_name> -a <email>

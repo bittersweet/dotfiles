@@ -1,0 +1,2 @@
+# shift-w
+move current tab to new window

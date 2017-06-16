@@ -1,0 +1,2 @@
+# Crop images
+convert base_image.jpg -crop 200x200+500+500 cropped_image.jpg

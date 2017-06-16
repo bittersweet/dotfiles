@@ -13,3 +13,10 @@ nmap <leader>t :Tmux command<CR>
 
 # Refresh all open files
 checktime
+
+# Remove all ^M (carriage return) characters
+# This is CTRL-V CTRL-M
+:%s/^V^M//g
+
+# Go to column number
+<num>|

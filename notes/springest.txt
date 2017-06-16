@@ -1,2 +1,5 @@
 # How to get ip of staging
 dig one-staging-web.elasticbeanstalk.com
+
+# Open a psql console inside docker (just need to get password)
+psql -h $RDS_HOSTNAME -U user database_name

@@ -3,3 +3,9 @@ dpkg --get-selections | grep -v deinstall
 
 # Get info about a package
 apt-cache show <package>
+
+# Service info
+systemctl status
+
+# Restart service
+systemctl restart sonarr.service

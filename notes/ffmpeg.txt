@@ -9,3 +9,13 @@ ffmpeg -i input.mp4 -vf fps=1 out%d.png
 
 # Record screen
 ffmpeg -f avfoundation -i "1:0" output.mov
+
+# Make gif out of images
+ffmpeg -f image2 -framerate 25 -i images-%d.jpg out.gif
+
+# Convert to x264
+ffmpeg -i input -c:v libx264 -preset slow -crf 22 -c:a copy output.mkv
+
+# Scale
+ffmpeg -i input -vf scale=-1:720 ...
+

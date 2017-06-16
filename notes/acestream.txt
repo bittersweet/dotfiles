@@ -1,0 +1,9 @@
+I've posted this a few times, but it's by far the best option for mac.. or any platform.
+Install docker: https://download.docker.com/mac/stable/Docker.dmg
+From terminal, run:
+docker run -t -p 8000:8000 ikatson/aceproxy
+Open vlc (or other), File->OpenNetwork, enter the following URL:
+http://localhost:8000/pid/ACESTREAMID/stream.mp4
+where for the above streams you would set
+ACESTREAMID=df28bedb7f06608310b698db67b2b936d2423f60
+for example.
