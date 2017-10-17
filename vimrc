@@ -184,39 +184,8 @@ set shiftround " Round indent to multiples of shiftwidth
 " Tslime setup
 let g:slime_target = "tmux"
 
-" Ctrl-P setup
-" Uses matcher for the same fuzzy-find algorithm as Command-T
-" https://github.com/burke/matcher
-let g:ctrlp_map = '<leader>t'
-map <leader>p :CtrlPClearCache<CR>
-
-" Open file even if it's opened in another buffer already
-let g:ctrlp_jump_to_buffer = 1
-
-let g:path_to_matcher = "/usr/local/bin/matcher"
-let g:ctrlp_user_command = ['.git/', 'cd %s && git ls-files . -co --exclude-standard']
-let g:ctrlp_match_func = { 'match': 'GoodMatch' }
-
-function! GoodMatch(items, str, limit, mmode, ispath, crfile, regex)
-  " Create a cache file if not yet exists
-  let cachefile = ctrlp#utils#cachedir().'/matcher.cache'
-  if !( filereadable(cachefile) && a:items == readfile(cachefile) )
-    call writefile(a:items, cachefile)
-  endif
-  if !filereadable(cachefile)
-    return []
-  endif
-
-  " a:mmode is currently ignored. In the future, we should probably do
-  " something about that. the matcher behaves like "full-line".
-  let cmd = g:path_to_matcher.' --limit '.a:limit.' --manifest '.cachefile.' '
-  if !( exists('g:ctrlp_dotfiles') && g:ctrlp_dotfiles )
-    let cmd = cmd.'--no-dotfiles '
-  endif
-  let cmd = cmd.a:str
-
-  return split(system(cmd), "\n")
-endfunction
+" FZF
+nnoremap <silent> <Leader>t :GFiles<CR>
 
 " Quick function to place after the first occurence of a = or -.
 " This fixes a pet peeve of mine that there should be a space after it in HAML
