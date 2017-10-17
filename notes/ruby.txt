@@ -7,3 +7,6 @@ pp ['bla']
 
 # Add collaborator to gem
 gem owner <gem_name> -a <email>
+
+# See all instance variables
+instance_variables

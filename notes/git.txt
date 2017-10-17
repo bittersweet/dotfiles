@@ -18,3 +18,6 @@ git merge-base master <branch>
 
 # shallow clone
 git clone --depth 1 <url>
+
+# Show direct commits on branch
+git log --no-merges --first-parent

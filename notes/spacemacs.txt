@@ -57,6 +57,12 @@ SPC /
 # Keep helm buffer open
 f3
 
+# Cycle through search results in opened buffer (next error)
+SPC e n
+
+# Error transient state, cycle with n or p
+SPC e .
+
 # Clear search highlight
 SPC s c
 

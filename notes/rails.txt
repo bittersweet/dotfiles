@@ -2,6 +2,9 @@
 # ActiveRecord cache_key : http://www.rubydoc.info/docs/rails/4.1.7/ActiveRecord%2FIntegration%3Acache_key
 ActiveSupport::Cache.expand_cache_key ["v3", "training", training]
 
-
 # Disable Rails SQL logging
 ActiveRecord::Base.logger = nil
+
+# Log queries in production
+ActiveRecord::Base.logger = Logger.new(STDERR)
+
