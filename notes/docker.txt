@@ -1,8 +1,17 @@
 # Kill all running containers
 docker kill $(docker ps -q)
 
+# Docker's builtin cleanup
+docker system prune -a
+
 # Clean up all images
 docker rmi -f $(docker images -q)
+
+# Clean up volumes
+docker volume rm $(docker volume ls -f dangling=true -q)
+
+# Clean up images
+docker run --rm -v /var/run/docker.sock:/var/run/docker.sock -v /etc:/etc spotify/docker-gc
 
 # See build history of an image/tag
 docker history tagname

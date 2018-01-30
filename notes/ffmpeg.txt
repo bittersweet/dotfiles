@@ -17,9 +17,17 @@ ffmpeg -f image2 -framerate 5 -pattern_type glob -i '*.jpg' -filter_complex "fps
 # -r is framerate, 10 seems fine
 ffmpeg -ss 00:00:00.000 -i input.mov -pix_fmt rgb24 -r 10 output.gif
 
+# Gif with palette (seems to be higher quality)
+ffmpeg -y -i input.flv \
+  -vf fps=10,scale=320:-1:flags=lanczos,palettegen palette.png
+ffmpeg -i input.flv -i palette.png -filter_complex \
+  "fps=10,scale=320:-1:flags=lanczos[x];[x][1:v]paletteuse" output.gif
+
 # Convert to x264
 ffmpeg -i input -c:v libx264 -preset slow -crf 22 -c:a copy output.mkv
 
 # Scale
 ffmpeg -i input -vf scale=-1:720 ...
 
+# drop audio track (-an)
+ffmpeg -i input -c:v... -an output.mp4

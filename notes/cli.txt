@@ -102,3 +102,6 @@ lsof -n -iTCP:3000
 
 # Remove word after cursor
 alt-d
+
+# Format json file and overwrite
+jq . file.json | sponge file.json
