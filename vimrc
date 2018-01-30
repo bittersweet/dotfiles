@@ -208,6 +208,11 @@ function! FixDoubleSpaces()
   silent! :%s/\v(^ *)@<! {2,}/ /g
 endfunction
 
+function! GHOpen()
+  silent! :call system('ghopen ' . expand('%') . ' ' . line('.'))
+endfunction
+map <silent><F2> :call GHOpen()<return>
+
 " Setup Turbux keybindings
 let g:no_turbux_mappings = 1
 map <leader>f <Plug>SendTestToTmux
