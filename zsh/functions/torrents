@@ -1,5 +1,5 @@
 NETWORK=`current_network`
-if [ "$NETWORK" = "bitterzoet"  ]; then
+if [ "$NETWORK" = "Bitterzoet"  ]; then
   scp ~/Downloads/*.torrent athena:~/downloads/watch && rm ~/Downloads/*.torrent
 else
   scp ~/Downloads/*.torrent athenaext:~/downloads/watch && rm ~/Downloads/*.torrent

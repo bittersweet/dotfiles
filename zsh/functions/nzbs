@@ -1,6 +1,6 @@
 NETWORK=`current_network`
-if [ "$NETWORK" = "bitterzoet"  ]; then
-  scp *.nzb athena:~/downloads/watch && rm *.nzb
+if [ "$NETWORK" = "Bitterzoet"  ]; then
+  scp ~/Downloads/*.nzb athena:~/downloads/watch && rm ~/Downloads/*.nzb
 else
-  scp *.nzb athenaext:~/downloads/watch && rm *.nzb
+  scp ~/Downloads/*.nzb athenaext:~/downloads/watch && rm ~/Downloads/*.nzb
 fi
