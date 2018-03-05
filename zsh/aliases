@@ -33,4 +33,6 @@ alias hosts='sudo vim /etc/hosts'
 # Set MC color scheme
 alias mc='mc -S sand256'
 
-alias y youtube-dl
+alias y='youtube-dl'
+
+alias vi='vim'

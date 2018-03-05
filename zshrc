@@ -17,3 +17,5 @@ export PATH="/usr/local/heroku/bin:$PATH"
 export PATH="./bin:$PATH" # for binstubs, had to load it here otherwise rbenv path stuff gets precedence, eventhough I loaded the ./bin first
 
 export PATH="/usr/local/bin:$PATH" >> ~/.zshrc
+
+eval $(keychain --eval --quiet id_rsa ~/.ssh/id_rsa)
