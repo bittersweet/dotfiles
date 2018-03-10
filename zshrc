@@ -1,9 +1,8 @@
+OS=$(uname)
+
 . ~/.zsh/config
 . ~/.zsh/aliases
 . ~/.zsh/completion
-
-# use .localrc for settings specific to one system
-[[ -f ~/.localrc ]] && .  ~/.localrc
 
 export RUBY_GC_HEAP_INIT_SLOTS=800000
 export RUBY_HEAP_FREE_MIN=100000
@@ -18,4 +17,7 @@ export PATH="./bin:$PATH" # for binstubs, had to load it here otherwise rbenv pa
 
 export PATH="/usr/local/bin:$PATH" >> ~/.zshrc
 
-eval $(keychain --eval --quiet id_rsa ~/.ssh/id_rsa)
+if test "$OS" = "Linux"; then
+  # SSH password manager
+  eval $(keychain --eval --quiet id_rsa ~/.ssh/id_rsa)
+fi
