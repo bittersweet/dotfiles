@@ -82,3 +82,5 @@ export ANDROID_HOME=/usr/local/opt/android-sdk
 export VISUAL="vim"
 
 eval "$(direnv hook zsh)"
+
+set -o emacs
