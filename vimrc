@@ -246,3 +246,7 @@ set pastetoggle=<F2>
 
 let g:tslime_always_current_session = 1
 let g:tslime_always_current_window = 1
+
+let g:rustfmt_autosave = 1
+let g:syntastic_rust_checkers = ['rustc']
+
