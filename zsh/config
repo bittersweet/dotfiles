@@ -84,3 +84,6 @@ export VISUAL="vim"
 eval "$(direnv hook zsh)"
 
 set -o emacs
+
+# GPG Signing of commits
+export GPG_TTY=$(tty)
