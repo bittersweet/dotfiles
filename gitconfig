@@ -22,3 +22,7 @@
 [push]
   # Push current branch even if you've never pushed it before
   default = current
+[commit]
+	gpgsign = true
+[gpg]
+	program = gpg
