@@ -1,0 +1,5 @@
+FILENAME=$1
+BASENAME=$(echo $FILENAME | cut -f 1 -d ".")
+OUTPUT=$BASENAME".mp4"
+ffmpeg -i $FILENAME -vf scale=-1:720 -c:v libx264 -preset slow -crf 22 -c:a copy $OUTPUT
+
