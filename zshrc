@@ -21,3 +21,5 @@ if test "$OS" = "Linux"; then
   # SSH password manager
   eval $(keychain --eval --quiet id_rsa ~/.ssh/id_rsa)
 fi
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
