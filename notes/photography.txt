@@ -1,0 +1,2 @@
+# Check film mode for fuji
+exiftool -m -s -f -FilmMode image.jpg
