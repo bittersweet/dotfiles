@@ -6,6 +6,8 @@ export MANPATH="/usr/local/man:/usr/local/mysql/man:/usr/local/git/man:$MANPATH"
 export GOPATH="/home/markmulder/sources/go"
 export PATH=$PATH:/usr/local/opt/go/libexec/bin
 
+export PATH=$PATH:$HOME/.cargo/bin
+
 export LANGUAGE=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
