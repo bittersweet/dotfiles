@@ -1,11 +1,20 @@
-export PATH=":/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:$PATH"
+# Dotfiles functions
 export PATH=$PATH:/home/markmulder/dotfiles/zsh/functions
-export MANPATH="/usr/local/man:/usr/local/mysql/man:/usr/local/git/man:$MANPATH"
-export PATH=$PATH:/usr/local/opt/go/libexec/bin
+
+# Rust
+export PATH=$PATH:$HOME/.cargo/bin
+
+# Go
+export GOPATH=$HOME/sources/go
 export PATH=$PATH:$GOPATH/bin
 
-export GOPATH=$HOME/sources/go
-export PATH=$PATH:$HOME/.cargo/bin
+# Binstubs
+export PATH="./bin:$PATH"
+
+# Flutter (linux only)
+export PATH=$PATH:/opt/flutter/bin
+
+export MANPATH="/usr/local/man:/usr/local/mysql/man:/usr/local/git/man:$MANPATH"
 
 export LANGUAGE=en_US.UTF-8
 export LANG=en_US.UTF-8
