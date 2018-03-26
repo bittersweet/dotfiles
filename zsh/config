@@ -1,11 +1,10 @@
 export PATH=":/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:$PATH"
-export PATH=$PATH:/home/markmulder/sources/go/bin
-export PATH=$PATH:/home/markmulder/sources
 export PATH=$PATH:/home/markmulder/dotfiles/zsh/functions
 export MANPATH="/usr/local/man:/usr/local/mysql/man:/usr/local/git/man:$MANPATH"
-export GOPATH="/home/markmulder/sources/go"
 export PATH=$PATH:/usr/local/opt/go/libexec/bin
+export PATH=$PATH:$GOPATH/bin
 
+export GOPATH=$HOME/sources/go
 export PATH=$PATH:$HOME/.cargo/bin
 
 export LANGUAGE=en_US.UTF-8
@@ -88,6 +87,9 @@ export ANDROID_HOME=/usr/local/opt/android-sdk
 export VISUAL="vim"
 
 eval "$(direnv hook zsh)"
+
+# PSQL binaries were unavailable for some reason after updating homebrew
+export PATH=$PATH:/usr/local/Cellar/postgresql94/9.4.9_1/bin
 
 set -o emacs
 
