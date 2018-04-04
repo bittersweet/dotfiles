@@ -60,14 +60,6 @@ filetype indent on
 filetype plugin on
 compiler ruby
 
-" Ack
-let g:ackprg="ack -H --nocolor --nogroup --column"
-map <leader>a :Ack<space>
-
-" NERDTree
-noremap ,n :NERDTreeToggle<CR>
-let NERDTreeHijackNetrw=0
-
 " page through quickfix results with cmd-J cmd-K
 map <D-J> :cnext<CR>
 map <D-K> :cprev<CR>
@@ -78,31 +70,13 @@ autocmd BufWritePre * :%s/\s\+$//e
 " Set tabstop to 4 for JS
 " autocmd Filetype javascript setlocal ts=4 sts=4 sw=4
 
-" Colors
-" let g:hybrid_use_iTerm_colors = 1
-" colorscheme hybrid
-" set background=dark
-let g:lucius_style='light'
-let g:lucius_contrast='high'
-let g:lucius_contrast_bg='high'
-colorscheme lucius
-" colorscheme seoul256
-" colorscheme hemisu
-" colorscheme smyck
+colorscheme gotham256
+set t_Co=256
 
-set cursorline                          " show the current line
-
-" Tcomment
-map <leader>c :TComment<CR>
-
-" Ragtag
-let g:ragtag_global_maps = 1
+set cursorline
 
 " Shows what you are typing as a command
 set showcmd
-
-" Load matchit
-runtime! plugins/matchit.vim
 
 " Dont want to edit these files
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi
@@ -118,50 +92,12 @@ noremap! <Left> <Esc>
 noremap  <Right> ""
 noremap! <Right> <Esc>
 
-" Lusty Juggler
-nmap <silent> <Leader>b :LustyJuggler<CR>
-let g:LustyJugglerSuppressRubyWarning = 1
-
 " Binds for vertical and horizontal splits
 map <Leader>v :vsplit<CR>
 map <Leader>s :split<CR>
 
 " Open split on the right
 set splitright
-
-" function to delete complete method
-function! DeleteMethod()
-  exe "norm \<esc>V"
-  exe "norm %"
-  exe "norm j"
-  exe "norm D"
-endfunction
-map <Leader>d :call DeleteMethod()<CR>
-
-" Set colors to 256
-set t_Co=256
-
-" Indent and remember position
-map <silent><F5> mmgg=G`m^
-
-" run focussed tests
-map <silent><F6> <Plug>SendTestToTmux
-map <silent><F7> <Plug>SendFocusedTestToTmux
-
-" Toggle the quickfix window
-function! QfToggle()
-  for i in range(1, winnr('$'))
-    let bnum = winbufnr(i)
-    if getbufvar(bnum, '&buftype') == 'quickfix'
-      cclose
-      return
-    endif
-  endfor
-
-  copen
-endfunction
-
-map <Leader>q :call QfToggle()<CR>
 
 " Disable manual key
 nnoremap K <nop>
@@ -176,13 +112,40 @@ command Wq wq
 command Q q
 command Qa qa
 
-" Don't display full paths
-let g:Powerline_stl_path_style = 'short'
-
 set shiftround " Round indent to multiples of shiftwidth
 
-" Tslime setup
-let g:slime_target = "tmux"
+" Toggle paste mode to copy+paste with F2
+set pastetoggle=<F2>
+
+" ================
+" Custom functions
+" ================
+
+" function to delete complete method
+function! DeleteMethod()
+  exe "norm \<esc>V"
+  exe "norm %"
+  exe "norm j"
+  exe "norm D"
+endfunction
+map <Leader>d :call DeleteMethod()<CR>
+
+" Indent and remember position
+map <silent><F5> mmgg=G`m^
+
+" Toggle the quickfix window
+function! QfToggle()
+  for i in range(1, winnr('$'))
+    let bnum = winbufnr(i)
+    if getbufvar(bnum, '&buftype') == 'quickfix'
+      cclose
+      return
+    endif
+  endfor
+
+  copen
+endfunction
+map <Leader>q :call QfToggle()<CR>
 
 " FZF
 nnoremap <silent> <Leader>t :GFiles<CR>
@@ -214,7 +177,6 @@ endfunction
 map <silent><F2> :call GHOpen()<return>
 
 " Setup Turbux keybindings
-let g:no_turbux_mappings = 1
 map <leader>f <Plug>SendTestToTmux
 map <leader>F <Plug>SendFocusedTestToTmux
 
@@ -234,19 +196,42 @@ au FileType go nmap <leader>F :Tmux go run <c-r>%<CR>
 au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
 au FileType go nmap <Leader>gs <Plug>(go-doc)
 
-let g:go_fmt_command = "goimports"
-
 " Yaml
 au BufNewFile,BufRead *.yaml,*.yml set filetype=ansible
 
+" =============================
+" Plugin specific configuration
+" =============================
+
+" Tcomment
+map <leader>c :TComment<CR>
+
+" Load matchit
+runtime! plugins/matchit.vim
+
+" Ack
+map <leader>a :Ack<space>
+let g:ackprg="ack -H --nocolor --nogroup --column"
+
+" NERDTree
+noremap ,n :NERDTreeToggle<CR>
+let NERDTreeHijackNetrw=0
+
+" run focussed tests
+map <silent><F6> <Plug>SendTestToTmux
+map <silent><F7> <Plug>SendFocusedTestToTmux
+
+" Don't display full paths
+let g:Powerline_stl_path_style = 'short'
+
 let g:jsx_ext_required = 0 " Allow JSX in normal JS files"
-
-" Toggle paste mode to copy+paste with F2
-set pastetoggle=<F2>
-
-let g:tslime_always_current_session = 1
-let g:tslime_always_current_window = 1
 
 let g:rustfmt_autosave = 1
 let g:syntastic_rust_checkers = ['rustc']
 
+let g:slime_target = "tmux"
+let g:no_turbux_mappings = 1
+let g:tslime_always_current_session = 1
+let g:tslime_always_current_window = 1
+
+let g:go_fmt_command = "goimports"
