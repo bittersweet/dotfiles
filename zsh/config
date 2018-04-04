@@ -8,9 +8,6 @@ export PATH=$PATH:$HOME/.cargo/bin
 export GOPATH=$HOME/sources/go
 export PATH=$PATH:$GOPATH/bin
 
-# Binstubs
-export PATH="./bin:$PATH"
-
 # Flutter (linux only)
 export PATH=$PATH:/opt/flutter/bin
 
@@ -107,3 +104,6 @@ export GPG_TTY=$(tty)
 
 # load ssh commands to turn tmux pane that SSHs red
 source ~/dotfiles/zsh/functions/ssh_with_color.sh
+
+# Binstubs
+export PATH="./bin:$PATH"
