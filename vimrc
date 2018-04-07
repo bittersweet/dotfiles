@@ -70,8 +70,18 @@ autocmd BufWritePre * :%s/\s\+$//e
 " Set tabstop to 4 for JS
 " autocmd Filetype javascript setlocal ts=4 sts=4 sw=4
 
-colorscheme gotham256
+" set Vim-specific sequences for RGB colors
+" https://github.com/vim/vim/issues/993
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+
+set background=dark
+set termguicolors
+colorscheme deep-space
+" colorscheme gotham256
 set t_Co=256
+
+let g:gruvbox_contrast_dark="hard"
 
 set cursorline
 
