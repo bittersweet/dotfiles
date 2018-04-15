@@ -8,7 +8,6 @@ doc/app
 *.swp
 .rvmrc
 tags
-bin/
 node_modules
 .rbenv-version
 dump.rdb
