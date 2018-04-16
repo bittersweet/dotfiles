@@ -72,15 +72,27 @@ eval "$(rbenv init -)"
 autoload -U colors
 colors
 
-# Uses red color for exit status > 0
-local symbol="%(?,%{$fg[green]%}∞%{$reset_color%},%{$fg[red]%}∞%{$reset_color%})"
+local path_string="%{$fg[yellow]%}%~"
+local prompt_string="»"
 
-# https://github.com/seletskiy/zsh-prompt-lambda17/blob/master/prompt_lambda17_setup
-prompt_opts=(cr percent subst)
-PROMPT="%B%F{${1:-white}}%K{${2:-red}}"
-PROMPT="$PROMPT\${editor_info[keymap]:- }${3:-λ}\${editor_info[keymap]:- }"
-PROMPT="$PROMPT%k%f %~%b "
-RPROMPT=' '
+# Make prompt_string red if the previous command failed.
+local return_status="%(?:%{$fg[blue]%}$prompt_string:%{$fg[red]%}$prompt_string)"
+
+function parse_git_branch() {
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
+}
+
+git_branch_prompt () {
+  # Only use space for branch when we are in a git repo
+  local inside_git_repo="$(git rev-parse --is-inside-work-tree 2>/dev/null)"
+  if [ $inside_git_repo ]; then
+    echo " %{$fg[magenta]%}$(parse_git_branch) "
+  else
+    echo " "
+  fi
+}
+
+PROMPT='${path_string}$(git_branch_prompt)${return_status} %{$reset_color%}'
 
 autoload -U url-quote-magic
 zle -N self-insert url-quote-magic
