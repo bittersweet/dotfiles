@@ -82,7 +82,7 @@ function parse_git_branch() {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
 }
 
-git_branch_prompt () {
+git_branch_prompt() {
   # Only use space for branch when we are in a git repo
   local inside_git_repo="$(git rev-parse --is-inside-work-tree 2>/dev/null)"
   if [ $inside_git_repo ]; then
@@ -92,7 +92,32 @@ git_branch_prompt () {
   fi
 }
 
-PROMPT='${path_string}$(git_branch_prompt)${return_status} %{$reset_color%}'
+parse_remote_state() {
+	remote_state=$(git status -sb 2> /dev/null | grep -oh "\[.*\]")
+	if [[ "$remote_state" != "" ]]; then
+
+    # starting bracket
+    local out="$fg[yellow][$reset_color"
+
+		if [[ "$remote_state" == *ahead* ]] && [[ "$remote_state" == *behind* ]]; then
+			behind_num=$(echo "$remote_state" | grep -oh "behind [0-9]*" | grep -oh "[0-9]*$")
+			ahead_num=$(echo "$remote_state" | grep -oh "ahead [0-9]*" | grep -oh "[0-9]*$")
+      out="$out$fg[red]$behind_num$reset_color,$fg[green]$ahead_num$reset_color"
+		elif [[ "$remote_state" == *ahead* ]]; then
+			ahead_num=$(echo "$remote_state" | grep -oh "ahead [0-9]*" | grep -oh "[0-9]*$")
+      out="$out$fg[green]$ahead_num$reset_color"
+		elif [[ "$remote_state" == *behind* ]]; then
+			behind_num=$(echo "$remote_state" | grep -oh "behind [0-9]*" | grep -oh "[0-9]*$")
+      out="$out$fg[red]$behind_num$reset_color"
+		fi
+
+    # ending bracket
+    out="$out$fg[yellow]]$reset_color"
+    echo "$out "
+	fi
+}
+
+PROMPT='${path_string}$(git_branch_prompt)$(parse_remote_state)${return_status} %{$reset_color%}'
 
 autoload -U url-quote-magic
 zle -N self-insert url-quote-magic
