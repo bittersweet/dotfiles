@@ -77,11 +77,10 @@ let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
 set background=dark
 set termguicolors
-colorscheme deep-space
-" colorscheme gotham256
+let g:oceanic_next_terminal_bold = 1
+let g:oceanic_next_terminal_italic = 1
+colorscheme OceanicNext
 set t_Co=256
-
-let g:gruvbox_contrast_dark="hard"
 
 set cursorline
 
