@@ -1,10 +1,3 @@
-if [ $1 ]; then
-  # ssh -f -N -D 9999 $1 &
-  ssh -f -N -D 9999 $1
-else
-  # ssh -N -D 9999 athenaext &
-  ssh -N -D 9999 athenaext
-fi
-PID=$!
-
-echo "Tunnel opened on pid "$PID", connect to port 9999"
+# https://www.digitalocean.com/community/tutorials/how-to-route-web-traffic-securely-without-a-vpn-using-a-socks-tunnel
+ssh -D 9999 -f -C -q -N athenaext
+echo "Tunnel opened on port 9999, kill manually"
