@@ -22,7 +22,8 @@ set ttimeoutlen=50                    " Speed up O etc in the Terminal
 set virtualedit=block                 " Allow cursor to move where there is no text in visual block mode
 set showmatch                         " Show matching brackets.
 set mat=5                             " Bracket blinking.
-set laststatus=2                      " Always show status line.
+set laststatus=0                      " Always show status line.
+set noshowmode                        " Hide insert, replace or visual mode messages
 set lazyredraw                        " Don't redraw when it's not needed
 set wildmenu
 set wildignore+=*.o,.git,*tmp,*.png,*.jpg,*.log,*.sqlite3
@@ -230,9 +231,6 @@ let NERDTreeHijackNetrw=0
 map <silent><F6> <Plug>SendTestToTmux
 map <silent><F7> <Plug>SendFocusedTestToTmux
 
-" Don't display full paths
-let g:Powerline_stl_path_style = 'short'
-
 let g:jsx_ext_required = 0 " Allow JSX in normal JS files"
 
 let g:rustfmt_autosave = 1
@@ -244,3 +242,19 @@ let g:tslime_always_current_session = 1
 let g:tslime_always_current_window = 1
 
 let g:go_fmt_command = "goimports"
+
+" Vim-airline
+let g:airline_theme='violet'
+
+" mode + additional flags
+let g:airline_section_a = airline#section#create(['mode'])
+" VCS information
+let g:airline_section_b = ''
+" filename + read only flag
+let g:airline_section_c = ''
+" filetype
+let g:airline_section_x = ''
+" file encoding
+let g:airline_section_y = ''
+" Current position in file
+let g:airline_section_z = airline#section#create_right(['%l', '%c'])
