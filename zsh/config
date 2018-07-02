@@ -97,22 +97,22 @@ parse_remote_state() {
 	if [[ "$remote_state" != "" ]]; then
 
     # starting bracket
-    local out="$fg[yellow][$reset_color"
+    local out="%{$fg[yellow]%}[%{$reset_color%}"
 
 		if [[ "$remote_state" == *ahead* ]] && [[ "$remote_state" == *behind* ]]; then
 			behind_num=$(echo "$remote_state" | grep -oh "behind [0-9]*" | grep -oh "[0-9]*$")
 			ahead_num=$(echo "$remote_state" | grep -oh "ahead [0-9]*" | grep -oh "[0-9]*$")
-      out="$out$fg[red]$behind_num$reset_color,$fg[green]$ahead_num$reset_color"
+      out="$out%{$fg[red]%}$behind_num%[$reset_color%},%{$fg[green]%}$ahead_num%{$reset_color%}"
 		elif [[ "$remote_state" == *ahead* ]]; then
 			ahead_num=$(echo "$remote_state" | grep -oh "ahead [0-9]*" | grep -oh "[0-9]*$")
-      out="$out$fg[green]$ahead_num$reset_color"
+      out="$out%{$fg[green]%}$ahead_num%{$reset_color%}"
 		elif [[ "$remote_state" == *behind* ]]; then
 			behind_num=$(echo "$remote_state" | grep -oh "behind [0-9]*" | grep -oh "[0-9]*$")
-      out="$out$fg[red]$behind_num$reset_color"
+      out="$out%{$fg[red]%}$behind_num%{$reset_color%}"
 		fi
 
     # ending bracket
-    out="$out$fg[yellow]]$reset_color"
+    out="$out%{$fg[yellow]%}]%{$reset_color%}"
     echo "$out "
 	fi
 }
