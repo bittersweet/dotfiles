@@ -246,8 +246,8 @@ let g:airline_theme='violet'
 
 " mode + additional flags
 let g:airline_section_a = airline#section#create(['mode'])
-" VCS information
-let g:airline_section_b = ''
+" Filename
+let g:airline_section_b = airline#section#create(['%F'])
 " filename + read only flag
 let g:airline_section_c = ''
 " filetype
