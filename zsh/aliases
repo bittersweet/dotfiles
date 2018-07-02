@@ -35,4 +35,5 @@ alias mc='mc -S sand256'
 
 alias y='youtube-dl'
 
-alias vi='vim'
+alias vi='nvim'
+alias vim='nvim'
