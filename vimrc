@@ -233,7 +233,6 @@ map <silent><F7> <Plug>SendFocusedTestToTmux
 let g:jsx_ext_required = 0 " Allow JSX in normal JS files"
 
 let g:rustfmt_autosave = 1
-let g:syntastic_rust_checkers = ['rustc']
 
 let g:slime_target = "tmux"
 let g:no_turbux_mappings = 1
