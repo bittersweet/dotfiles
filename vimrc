@@ -219,9 +219,8 @@ map <leader>c :TComment<CR>
 " Load matchit
 runtime! plugins/matchit.vim
 
-" Ack
-map <leader>a :Ack<space>
-let g:ackprg="ack -H --nocolor --nogroup --column"
+" Search
+map <leader>a :Rg<space>
 
 " NERDTree
 noremap ,n :NERDTreeToggle<CR>
