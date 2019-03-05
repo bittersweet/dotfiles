@@ -14,23 +14,7 @@ tmux_bg_color_reset() {
 }
 
 tmux_bg_color_set() {
-  color='default'
-  for arg in "$@"; do
-    if [[ "${arg:0:1}" != "-" ]]; then
-      color='#322828'
-      color='red'
-      # if [[ "$arg" == "do" ]]; then
-      #   color='#322828'
-      # elif [[ "$arg" =~ '^athena' ]]; then
-      #   color='#323228'
-      # elif [[ "$arg" =~ '^int[0-9]?-' ]]; then
-      #   color='#323228'
-      # fi
-      break
-    fi
-  done
-  # tmux set window-style "bg=$color"
-  tmux select-pane -P "bg=$color"
+  tmux select-pane -P "bg=colour24"
 }
 
 alias ssh='ssh_with_color'
