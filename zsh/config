@@ -144,3 +144,6 @@ source ~/dotfiles/zsh/functions/ssh_with_color.sh
 
 # Binstubs
 export PATH="./bin:$PATH"
+
+# Python local binaries (pip install --user)
+export PATH=$PATH:$HOME/.local/bin
