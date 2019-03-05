@@ -1,2 +1,8 @@
 --exclude=*.html
 --exclude=*.js
+--exclude=.git
+--exclude=log
+--exclude=vendor
+--exclude=db/migrate
+
+--regex-ruby=/(^|[:;])[ \t]*([A-Z][[:alnum:]_]+) *=/\2/c,class,constant/
