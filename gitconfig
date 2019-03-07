@@ -1,6 +1,7 @@
 [user]
 	name = Mark Mulder
 	email = markmulder@gmail.com
+	signingkey = 505ABF6591B4B0B9
 [color]
 	diff = auto
 	status = auto
