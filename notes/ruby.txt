@@ -10,3 +10,10 @@ gem owner <gem_name> -a <email>
 
 # See all instance variables
 instance_variables
+
+# Track memory
+gem Memory_profiler"
+require 'memory_profiler'
+report = MemoryProfiler.report do
+end
+report.pretty_print(to_file: "memory.txt")

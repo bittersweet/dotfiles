@@ -4,3 +4,5 @@
 # Get an image without a HEAD, because sometimes HEAD IS not cached by a CDN etc
 curl -svo /dev/null 'url.jpg'
 
+# POST file data as json
+curl -XPOST -H "Content-Type: application/json" -d @file.json "http://localhost:3000"
