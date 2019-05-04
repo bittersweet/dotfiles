@@ -9,3 +9,6 @@ systemctl status
 
 # Restart service
 systemctl restart sonarr.service
+
+# Pbcopy alternative
+cat file | xclip -selection clipboard

@@ -20,3 +20,6 @@ checktime
 
 # Go to column number
 <num>|
+
+# Repeat last used macro (or hold @ to repeat)
+@@
