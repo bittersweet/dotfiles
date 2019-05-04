@@ -10,7 +10,7 @@
 [core]
 	excludesfile = ~/.gitignore
 	pager = less
-	editor = /usr/local/bin/nvim
+	editor = nvim
 	commentchar = @
 [github]
 	user = bittersweet
