@@ -1,0 +1,24 @@
+# Update package lists and update
+sudo pacman -Syy
+sudo pacman -Syu
+
+# Update specific package
+sudo pacman -S <package>
+
+# Find out information about a package
+sudo pacman -Qi <package>
+
+# Find orphaned packages (not required anymore)
+sudo pacman -Qdt
+
+# Remove package (with dependencies if possible)
+sudo pacman -R --recursive
+
+# Remove pacman package cache and keep only installed packages
+sudo pacman -Sc
+
+# List installed packages
+sudo pacman -Q
+
+# Raise ulimit temporarily
+ulimit -n 8192
