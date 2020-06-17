@@ -1,0 +1,9 @@
+Xft.dpi: 96
+Xft.antialias: true
+Xft.rgba: rgb
+Xft.lcdfilter: lcddefault
+
+URxvt.scrollBar: False
+URxvt.font: xft:Fira Mono:size=10
+!URxvt.lineSpace: 12
+
