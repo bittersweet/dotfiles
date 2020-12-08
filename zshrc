@@ -1,5 +1,7 @@
 OS=$(uname)
 
+. /Users/markmulder/.nix-profile/etc/profile.d/nix.sh
+
 . ~/.zsh/config
 . ~/.zsh/aliases
 . ~/.zsh/completion
