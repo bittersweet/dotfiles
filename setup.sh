@@ -16,13 +16,15 @@ ln -s ~/dotfiles/ctags ~/.ctags
 mkdir -p ~/.config/nvim
 ln -s ~/dotfiles/nvim/init.vim ~/.config/nvim/init.vim
 
+mkdir -p ~/.config/
+ln -s ~/dotfiles/linux/config/mpv ~/.config/mpv
+
 OS=$(uname)
 if test "$OS" = "Linux"; then
   ln -s ~/dotfiles/linux/config/alacritty ~/.config/alacritty
   ln -s ~/dotfiles/linux/config/bspwm ~/.config/bspwm
   ln -s ~/dotfiles/linux/config/sxhkd ~/.config/sxhkd
   ln -s ~/dotfiles/linux/config/rofi ~/.config/rofi
-  ln -s ~/dotfiles/linux/config/mpv ~/.config/mpv
   ln -s ~/dotfiles/linux/config/gtk-2.0 ~/.config/gtk-2.0
   ln -s ~/dotfiles/linux/config/gtk-3.0 ~/.config/gtk-3.0
 
