@@ -1,15 +1,20 @@
-# ln -s ~/dotfiles/zsh ~/.zsh
-# ln -s ~/dotfiles/zshrc ~/.zshrc
-# ln -s ~/dotfiles/ackrc ~/.ackrc
-# ln -s ~/dotfiles/gemrc ~/.gemrc
-# ln -s ~/dotfiles/gitconfig ~/.gitconfig
-# ln -s ~/dotfiles/gitignore ~/.gitignore
-# ln -s ~/dotfiles/irbrc ~/.irbrc
-# ln -s ~/dotfiles/rspec ~/.rspec
-# ln -s ~/dotfiles/tmux.conf ~/.tmux.conf
-# ln -s ~/dotfiles/vim ~/.vim
-# ln -s ~/dotfiles/vimrc ~/.vimrc
-# ln -s ~/dotfiles/ctags ~/.ctags
+ln -s ~/dotfiles/zsh ~/.zsh
+ln -s ~/dotfiles/zshrc ~/.zshrc
+ln -s ~/dotfiles/ackrc ~/.ackrc
+ln -s ~/dotfiles/gemrc ~/.gemrc
+mkdir -p ~/.bundle
+ln -s ~/dotfiles/bundler ~/.bundle/config
+ln -s ~/dotfiles/gitconfig ~/.gitconfig
+ln -s ~/dotfiles/gitignore ~/.gitignore
+ln -s ~/dotfiles/irbrc ~/.irbrc
+ln -s ~/dotfiles/rspec ~/.rspec
+ln -s ~/dotfiles/tmux.conf ~/.tmux.conf
+ln -s ~/dotfiles/vim ~/.vim
+ln -s ~/dotfiles/vimrc ~/.vimrc
+ln -s ~/dotfiles/ctags ~/.ctags
+
+mkdir -p ~/.config/nvim
+ln -s ~/dotfiles/nvim/init.vim ~/.config/nvim/init.vim
 
 OS=$(uname)
 if test "$OS" = "Linux"; then
