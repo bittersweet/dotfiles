@@ -1,6 +1,7 @@
 OS=$(uname)
 
 . /Users/markmulder/.nix-profile/etc/profile.d/nix.sh
+export NIX_CONF_DIR=~/.config/nix/
 
 . ~/.zsh/config
 . ~/.zsh/aliases

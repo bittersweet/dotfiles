@@ -12,12 +12,14 @@ ln -s ~/dotfiles/tmux.conf ~/.tmux.conf
 ln -s ~/dotfiles/vim ~/.vim
 ln -s ~/dotfiles/vimrc ~/.vimrc
 ln -s ~/dotfiles/ctags ~/.ctags
+ln -s ~/dotfiles/direnvrc ~/.direnvrc
 
 mkdir -p ~/.config/nvim
 ln -s ~/dotfiles/nvim/init.vim ~/.config/nvim/init.vim
 
 mkdir -p ~/.config/
 ln -s ~/dotfiles/linux/config/mpv ~/.config/mpv
+ln -s ~/dotfiles/linux/nix ~/.config/nix
 
 OS=$(uname)
 if test "$OS" = "Linux"; then
