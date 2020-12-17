@@ -13,3 +13,4 @@ node_modules
 dump.rdb
 .byebug_history
 *.pyc
+.direnv
