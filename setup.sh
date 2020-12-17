@@ -13,6 +13,7 @@ ln -s ~/dotfiles/vim ~/.vim
 ln -s ~/dotfiles/vimrc ~/.vimrc
 ln -s ~/dotfiles/ctags ~/.ctags
 ln -s ~/dotfiles/direnvrc ~/.direnvrc
+ln -s ~/dotfiles/tigrc ~/.tigrc
 
 mkdir -p ~/.config/nvim
 ln -s ~/dotfiles/nvim/init.vim ~/.config/nvim/init.vim
