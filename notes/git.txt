@@ -24,3 +24,6 @@ git log --no-merges --first-parent
 
 # Show merges only
 git log --merges
+
+# Create (lightweight versus annotated) tag
+git tag v1.0.0
