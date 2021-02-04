@@ -1,0 +1,30 @@
+# Install package
+nix-env --install --attr nixpkgs.tmux
+nix-env -iA nixpkgs.tmux
+
+# Uninstall package
+nix-env --uninstall ts
+nix-env -e ts # e for erase
+
+# Run shell with certain header files available (was necessary to compile certain gems)
+nix-shell -p libjpeg
+
+# Show dependencies per derivation
+nix-store --query --requisites <package>
+nix-store -qR <package>
+
+# Show channels
+nix-channel --list
+
+# Update channels (similar to apt-get update)
+nix-channel --update
+
+# Update all packages
+nix-env --upgrade
+nix-env -u
+
+# Open nix repl
+nix repl
+
+# List installed packages
+nix-env --query
