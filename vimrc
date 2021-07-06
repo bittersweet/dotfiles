@@ -26,7 +26,7 @@ set laststatus=0                      " Always show status line.
 set noshowmode                        " Hide insert, replace or visual mode messages
 set lazyredraw                        " Don't redraw when it's not needed
 set wildmenu
-set wildignore+=*.o,.git,*tmp,*.png,*.jpg,*.log,*.sqlite3
+set wildignore+=*.o,.git,*tmp,*.png,*.jpg,*.sqlite3
 set nofoldenable                      " disable folding"
 
 set shiftwidth=2                      " Spaces per tab (when shifting)
