@@ -1,5 +1,5 @@
 if [ $1 ]; then
-  bundle exec rake routes | grep -i $1
+  bundle exec rails routes | grep -i $1
 else
-  bundle exec rake routes
+  bundle exec rails routes
 fi
