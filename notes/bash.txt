@@ -4,3 +4,13 @@ do
   echo "$i"
 done
 
+# Pad numbers
+printf "%02d" 10
+
+# Generate sequence (with padding)
+seq -f "03g" 1 30
+
+for i in $(seq -f "%03g" 1 30)
+do
+  echo $i
+done

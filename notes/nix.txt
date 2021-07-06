@@ -28,3 +28,12 @@ nix repl
 
 # List installed packages
 nix-env --query
+
+# Show derivation for installed binary
+nix show-derivation $(which ..)
+
+# Garbage collect
+nix-collect-garbage
+
+# Update nix itself
+nix-channel --update; nix-env -iA nixpkgs.nix

@@ -32,5 +32,8 @@ ffmpeg -i input -vf scale=-1:720 ...
 # drop audio track (-an)
 ffmpeg -i input -c:v... -an output.mp4
 
-# rotate image
-ffmpeg -i input.mp4 -vf "transpose=1,transpose=1" output.mp4
+# rotate video 90 degrees clockwise
+ffmpeg -i input.mp4 -vf "transpose=1" output.mp4
+
+# rotate video 90 degrees counter-clockwise
+ffmpeg -i input.mp4 -vf "transpose=2" output.mp4
