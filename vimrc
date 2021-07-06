@@ -223,6 +223,9 @@ map <leader>a :Rg<space>
 noremap ,n :NERDTreeToggle<CR>
 let NERDTreeHijackNetrw=0
 
+" Show hidden files and directories
+let NERDTreeShowHidden=1
+
 " run focussed tests
 map <silent><F6> <Plug>SendTestToTmux
 map <silent><F7> <Plug>SendFocusedTestToTmux
